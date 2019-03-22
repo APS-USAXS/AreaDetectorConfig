@@ -1,0 +1,172 @@
+<?xml version="1.0" standalone="no" ?>
+
+<!--
+########### SVN repository information ###################
+# $Date: 2015-02-20 10:56:46 -0600 (Fri, 20 Feb 2015) $
+# $Author: jemian $
+# $Revision: 7995 $
+# $HeadURL: https://subversion.xray.aps.anl.gov/bcdaioc/9idc_AD/area_detector/SAXS_config/nexus_plugin/nexus_attributes_mar165.xml $
+# $Id: nexus_attributes_mar165.xml 7995 2015-02-20 16:56:46Z jemian $
+########### SVN repository information ###################
+-->
+
+<!-- Attributes -->
+<Attributes
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="attributes.xsd"
+  >
+    <Attribute name="Manufacturer"	     type="PARAM"    source="MANUFACTURER"			datatype="STRING"    description="Camera manufacturer"/>
+    <Attribute name="Model"		     type="PARAM"    source="MODEL"				datatype="STRING"    description="Camera model"/>
+    <Attribute name="MaxSizeX"		     type="PARAM"    source="MAX_SIZE_X"			datatype="INT"       description="Detector X size"/>
+    <Attribute name="MaxSizeY"		     type="PARAM"    source="MAX_SIZE_Y"			datatype="INT"       description="Detector Y size"/>
+    <Attribute name="ImageCounter"	     type="PARAM"    source="ARRAY_COUNTER"			datatype="INT"       description="Image counter"/>
+
+    <Attribute name="UserName"		     type="EPICS_PV" source="15iddLAX:UserName" 		dbrtype="DBR_NATIVE" description="user name listed as GUP PI"/>
+    <Attribute name="sample_thickness"	     type="EPICS_PV" source="15iddSAXS:sampleThickness"		dbrtype="DBR_NATIVE" description="sample thickness"/>
+    <Attribute name="ScanMacro" 	     type="EPICS_PV" source="15iddLAX:SpecMacroFileName"	dbrtype="DBR_NATIVE" description="name of SPEC macro file"/>
+
+    <Attribute name="SampleTitle"	     type="EPICS_PV" source="15iddSAXS:SampleName"	        dbrtype="DBR_NATIVE" description="sample name"/>   <!-- FIXME:  needs correct PV -->
+
+    <Attribute name="GUPNumber" 	     type="EPICS_PV" source="15iddLAX:GUPNumber"		dbrtype="DBR_NATIVE" description="GUP proposal number"/>
+    <Attribute name="APS_run_cycle"	     type="EPICS_PV" source="15iddLAX:RunCycle" 		dbrtype="DBR_NATIVE" description="APS operating cycle"/>
+
+    <!-- FIXME: ************************** MAR CCD PV  (also change in nexus_template_mar165.xml) **************************    -->
+    <Attribute name="PresetTime"	     type="EPICS_PV" source="Mar165_A:cam1:AcquireTime"		dbrtype="DBR_NATIVE" description="specified time for this exposure, s"/>   <!-- FIXME:  needs correct PV -->
+
+    <Attribute name="SDD"		     type="EPICS_PV" source="15iddSAXS:SDD.VAL"			dbrtype="DBR_NATIVE" description="SDD: distance between sample and detector, mm"/>
+
+    <!-- NeXus NXsas definition needs wavelength -->
+    <Attribute name="wavelength"		 type="EPICS_PV" source="15IDA:BraggLambdaRdbkAO"	dbrtype="DBR_NATIVE" description="monochromator wavelength, A"/>
+    <Attribute name="wavelength_spread" 	 type="EPICS_PV" source="15IDSAXS:WavelengthSpread"	dbrtype="DBR_NATIVE" description="delta-lambda / lambda"/>
+ 
+    <Attribute name="monoE"			 type="EPICS_PV" source="15IDA:BraggERdbkAO"		dbrtype="DBR_NATIVE" description="monochromator energy, keV"/>
+    <Attribute name="idE"			 type="EPICS_PV" source="15ID:Energy"			dbrtype="DBR_NATIVE" description="ID energy, keV"/>
+
+    <Attribute name="SRcurrent" 		 type="EPICS_PV" source="S:SRcurrentAI" 		dbrtype="DBR_NATIVE" description="Storage Ring Current, mA"/>
+
+
+    <Attribute name="iso8601_time_stamp"	 type="EPICS_PV" source="15iddLAX:timestamp"		dbrtype="DBR_NATIVE" description="time stamp (ISO 8601) at end of image"/>
+
+    <Attribute name="ccd_beam_center_x" 	 type="EPICS_PV" source="15iddSAXS:CCD_BeamCenterX.VAL" dbrtype="DBR_NATIVE" description="CCD beam X center"/>
+    <Attribute name="ccd_beam_center_y" 	 type="EPICS_PV" source="15iddSAXS:CCD_BeamCenterY.VAL" dbrtype="DBR_NATIVE" description="CCD beam Y center"/>
+
+    <Attribute name="ccd_pixel_size_x"		 type="EPICS_PV" source="15iddSAXS:CCD_PixSizeX.VAL"	dbrtype="DBR_NATIVE" description="CCD X pixel size"/>
+    <Attribute name="ccd_pixel_size_y"		 type="EPICS_PV" source="15iddSAXS:CCD_PixSizeY.VAL"	dbrtype="DBR_NATIVE" description="CCD Y pixel size"/>
+    <Attribute name="ccd_center_x"		 type="EPICS_PV" source="15iddSAXS:CCD_CenterX.VAL"	dbrtype="DBR_NATIVE" description="CCD X center"/>
+    <Attribute name="ccd_center_y"		 type="EPICS_PV" source="15iddSAXS:CCD_CenterY.VAL"	dbrtype="DBR_NATIVE" description="CCD Y center"/>
+
+    <Attribute name="coll_size_x"		 type="EPICS_PV" source="15iddSAXS:Coll_SizeX.VAL"      dbrtype="DBR_NATIVE" description="Coll X center"/>
+    <Attribute name="coll_size_y"		 type="EPICS_PV" source="15iddSAXS:Coll_SizeY.VAL"      dbrtype="DBR_NATIVE" description="Coll Y center"/>
+    <Attribute name="coll_center_x"		 type="EPICS_PV" source="15iddSAXS:Coll_CenterX.VAL"	dbrtype="DBR_NATIVE" description="Coll X pixel size"/>
+    <Attribute name="coll_center_y"		 type="EPICS_PV" source="15iddSAXS:Coll_CenterY.VAL"	dbrtype="DBR_NATIVE" description="Coll Y pixel size"/>
+
+
+    <Attribute name="USAXSslitVap"		 type="EPICS_PV" source="15iddLAX:m58:c2:m7"		dbrtype="DBR_NATIVE" description="USAXS slit, vertical aperture, mm"/>
+    <Attribute name="USAXSslitHap"		 type="EPICS_PV" source="15iddLAX:m58:c2:m8"		dbrtype="DBR_NATIVE" description="USAXS slit, horizontal aperture, mm"/>
+    <Attribute name="USAXSslitVpos"		 type="EPICS_PV" source="15iddLAX:m58:c2:m5"		dbrtype="DBR_NATIVE" description="USAXS slit, vertical position, mm"/>
+    <Attribute name="USAXSslitHpos"		 type="EPICS_PV" source="15iddLAX:m58:c2:m6"		dbrtype="DBR_NATIVE" description="USAXS slit, horizontal position, mm"/>
+
+    <Attribute name="filterAl"			 type="EPICS_PV" source="15iddUSX:pf4:filterAl" 	dbrtype="DBR_NATIVE" description="Al filter, mm"/>
+    <Attribute name="filterTi"			 type="EPICS_PV" source="15iddUSX:pf4:filterTi" 	dbrtype="DBR_NATIVE" description="Ti filter, mm"/>
+    <Attribute name="filterGlass"		 type="EPICS_PV" source="15iddUSX:pf42:filterGlass"	dbrtype="DBR_NATIVE" description="Glass filter, mm"/>
+
+    <Attribute name="I0_V"			 type="EPICS_PV" source="15iddUSX:ath01:ana01:ai05"	dbrtype="DBR_NATIVE" description="I0 voltage, V"/>
+    <Attribute name="I00_V"			 type="EPICS_PV" source="15iddUSX:ath01:ana01:ai06"	dbrtype="DBR_NATIVE" description="I00 voltage, V"/>
+
+    <Attribute name="seconds_cts"		 type="EPICS_PV" source="15iddSAXS:vsc:c0.S1"		dbrtype="DBR_NATIVE" description="seconds counts"/>
+    <Attribute name="BPM_left_cts"		 type="EPICS_PV" source="15iddSAXS:vsc:c0.S2"		dbrtype="DBR_NATIVE" description="BPM left counts"/>
+    <Attribute name="BPM_top_cts"		 type="EPICS_PV" source="15iddSAXS:vsc:c0.S3"		dbrtype="DBR_NATIVE" description="BPM top counts"/>
+    <Attribute name="BPM_right_cts"		 type="EPICS_PV" source="15iddSAXS:vsc:c0.S4"		dbrtype="DBR_NATIVE" description="BPM right counts"/>
+    <Attribute name="BPM_bottom_cts"		 type="EPICS_PV" source="15iddSAXS:vsc:c0.S5"		dbrtype="DBR_NATIVE" description="BPM bottom counts"/>
+    <Attribute name="PD_cts"			 type="EPICS_PV" source="15iddSAXS:vsc:c0.S6"		dbrtype="DBR_NATIVE" description="PD counts"/>
+    <Attribute name="BSPD_cts"			 type="EPICS_PV" source="15iddSAXS:vsc:c0.S7"		dbrtype="DBR_NATIVE" description="BSPD counts"/>
+    <Attribute name="I0_cts"			 type="EPICS_PV" source="15iddSAXS:vsc:c0.S8"		dbrtype="DBR_NATIVE" description="I0 counts"/>
+    <Attribute name="scaler_freq"		 type="EPICS_PV" source="15iddSAXS:vsc:c0.FREQ" 	dbrtype="DBR_NATIVE" description="scaler frequency, Hz"/>
+    <Attribute name="scaler_preset_count_time"	 type="EPICS_PV" source="15iddSAXS:vsc:c0.TP"		dbrtype="DBR_NATIVE" description="scaler preset count time, s"/>
+    <Attribute name="scaler_elapsed_count_time"	 type="EPICS_PV" source="15iddSAXS:vsc:c0.T"		dbrtype="DBR_NATIVE" description="scaler elapsed count time, s"/>
+    <!-- Attribute name="I0_gain"	     type="EPICS_PV" source="15iddUSX :fem02:seq01:gain" 	dbrtype="DBR_NATIVE" description="I0 V/A gain"/ -->
+    <!-- Attribute name="I00_gain"	     type="EPICS_PV" source="15iddUSX :fem03:seq01:gain" 	dbrtype="DBR_NATIVE" description="I00 V/A gain"/ -->
+
+
+
+<!-- new stuff added 2012-02-10 -->
+    <Attribute name='SPEC_AcquireTime'	      type='EPICS_PV' source='15iddSAXS:AcquireTime'	   dbrtype='DBR_NATIVE' description='SPEC AcquireTime' />
+    <Attribute name='BeamIn'		      type='EPICS_PV' source='15iddSAXS:BeamIn' 	   dbrtype='DBR_NATIVE' description='BeamIn' />
+    <Attribute name='BPM_B_Dark'	      type='EPICS_PV' source='15iddSAXS:BPM_B_Dark'	   dbrtype='DBR_NATIVE' description='BPM_B_Dark' />
+    <Attribute name='BPM_B_Empty'	      type='EPICS_PV' source='15iddSAXS:BPM_B_Empty'	   dbrtype='DBR_NATIVE' description='BPM_B_Empty' />
+    <Attribute name='BPM_B_Sample'	      type='EPICS_PV' source='15iddSAXS:vsc:c0.S5'	   dbrtype='DBR_NATIVE' description='BPM_B_Sample' />
+    <Attribute name='BPM_L_Dark'	      type='EPICS_PV' source='15iddSAXS:BPM_L_Dark'	   dbrtype='DBR_NATIVE' description='BPM_L_Dark' />
+    <Attribute name='BPM_L_Empty'	      type='EPICS_PV' source='15iddSAXS:BPM_L_Empty'	   dbrtype='DBR_NATIVE' description='BPM_L_Empty' />
+    <Attribute name='BPM_L_Sample'	      type='EPICS_PV' source='15iddSAXS:vsc:c0.S2'	   dbrtype='DBR_NATIVE' description='BPM_L_Sample' />
+    <Attribute name='BPM_R_Dark'	      type='EPICS_PV' source='15iddSAXS:BPM_R_Dark'	   dbrtype='DBR_NATIVE' description='BPM_R_Dark' />
+    <Attribute name='BPM_R_Empty'	      type='EPICS_PV' source='15iddSAXS:BPM_R_Empty'	   dbrtype='DBR_NATIVE' description='BPM_R_Empty' />
+    <Attribute name='BPM_R_Sample'	      type='EPICS_PV' source='15iddSAXS:vsc:c0.S4'	   dbrtype='DBR_NATIVE' description='BPM_R_Sample' />
+    <Attribute name='BPM_T_Dark'	      type='EPICS_PV' source='15iddSAXS:BPM_T_Dark'	   dbrtype='DBR_NATIVE' description='BPM_T_Dark' />
+    <Attribute name='BPM_T_Empty'	      type='EPICS_PV' source='15iddSAXS:BPM_T_Empty'	   dbrtype='DBR_NATIVE' description='BPM_T_Empty' />
+    <Attribute name='BPM_T_Sample'	      type='EPICS_PV' source='15iddSAXS:vsc:c0.S3'	   dbrtype='DBR_NATIVE' description='BPM_T_Sample' />
+    <Attribute name='BSPD_Dark' 	      type='EPICS_PV' source='15iddSAXS:BSPD_Dark'	   dbrtype='DBR_NATIVE' description='BSPD_Dark' />
+    <Attribute name='BSPD_Empty'	      type='EPICS_PV' source='15iddSAXS:BSPD_Empty'	   dbrtype='DBR_NATIVE' description='BSPD_Empty' />
+    <Attribute name='BSPD_Sample'	      type='EPICS_PV' source='15iddSAXS:vsc:c0.S7'	   dbrtype='DBR_NATIVE' description='BSPD_Sample' />
+    <Attribute name='area_detector_prefactor' type='EPICS_PV' source='15iddSAXS:CCDPV'		   dbrtype='DBR_NATIVE' description='area_detector_prefactor' />
+    <Attribute name='DiodeIn'		      type='EPICS_PV' source='15iddSAXS:DiodeIn'	   dbrtype='DBR_NATIVE' description='DiodeIn' />
+    <Attribute name='base_directory'	      type='EPICS_PV' source='15iddSAXS:directory'	   dbrtype='DBR_NATIVE' description='base_directory' />
+    <Attribute name='Dark_Filename'	      type='EPICS_PV' source='15iddSAXS:FileName_Dark'	   dbrtype='DBR_NATIVE' description='Dark_Filename' />
+    <Attribute name='Empty_Filename'	      type='EPICS_PV' source='15iddSAXS:FileName_Empty'    dbrtype='DBR_NATIVE' description='Empty_Filename' />
+    <Attribute name='I0_Dark'		      type='EPICS_PV' source='15iddSAXS:I0_Dark'	   dbrtype='DBR_NATIVE' description='I0_Dark' />
+    <Attribute name='I0_Empty'		      type='EPICS_PV' source='15iddSAXS:I0_Empty'	   dbrtype='DBR_NATIVE' description='I0_Empty' />
+    <Attribute name='I0_Sample' 	      type='EPICS_PV' source='15iddSAXS:vsc:c0.S8'	   dbrtype='DBR_NATIVE' description='I0_Sample' />
+    <Attribute name='SRZ'		      type='EPICS_PV' source='15iddSAXS:m58:c0:m1'	   dbrtype='DBR_NATIVE' description='SRZ' />
+    <Attribute name='SRX'		      type='EPICS_PV' source='15iddSAXS:m58:c0:m2'	   dbrtype='DBR_NATIVE' description='SRX' />
+    <Attribute name='SRY'		      type='EPICS_PV' source='15iddSAXS:m58:c0:m3'	   dbrtype='DBR_NATIVE' description='SRY' />
+    <Attribute name='SFX'		      type='EPICS_PV' source='15iddSAXS:m58:c0:m4'	   dbrtype='DBR_NATIVE' description='SFX' />
+    <Attribute name='SFY_I'		      type='EPICS_PV' source='15iddSAXS:m58:c0:m5'	   dbrtype='DBR_NATIVE' description='SFY_I' />
+    <Attribute name='SFY_O'		      type='EPICS_PV' source='15iddSAXS:m58:c0:m6'	   dbrtype='DBR_NATIVE' description='SFY_O' />
+    <Attribute name='CMIR'		      type='EPICS_PV' source='15iddSAXS:m58:c0:m7'	   dbrtype='DBR_NATIVE' description='CMIR' />
+    <Attribute name='SpLX'		      type='EPICS_PV' source='15iddSAXS:m58:c0:m8'	   dbrtype='DBR_NATIVE' description='SpLX' />
+    <Attribute name='BSX'		      type='EPICS_PV' source='15iddSAXS:m58:c1:m1'	   dbrtype='DBR_NATIVE' description='BSX' />
+    <Attribute name='BSY'		      type='EPICS_PV' source='15iddSAXS:m58:c1:m2'	   dbrtype='DBR_NATIVE' description='BSY' />
+    <Attribute name='BPMX'		      type='EPICS_PV' source='15iddSAXS:m58:c1:m3'	   dbrtype='DBR_NATIVE' description='BPMX' />
+    <Attribute name='BPMY'		      type='EPICS_PV' source='15iddSAXS:m58:c1:m4'	   dbrtype='DBR_NATIVE' description='BPMY' />
+    <Attribute name='SpY'		      type='EPICS_PV' source='15iddSAXS:m58:c1:m7'	   dbrtype='DBR_NATIVE' description='SpY' />
+    <Attribute name='SpX'		      type='EPICS_PV' source='15iddSAXS:m58:c1:m8'	   dbrtype='DBR_NATIVE' description='SpX' />
+    <Attribute name='Ctilt'		      type='EPICS_PV' source='15iddLAX:xps:c0:m8'	   dbrtype='DBR_NATIVE' description='Ctilt' />
+    <Attribute name='Cyaw'		      type='EPICS_PV' source='15iddSAXS:m58:c2:m1'	   dbrtype='DBR_NATIVE' description='Cyaw' />
+    <Attribute name='CollX'		      type='EPICS_PV' source='15iddSAXS:m58:c2:m2'	   dbrtype='DBR_NATIVE' description='CollX' />
+    <Attribute name='CollY'		      type='EPICS_PV' source='15iddSAXS:m58:c2:m3'	   dbrtype='DBR_NATIVE' description='CollY' />
+    <Attribute name='MirrorIn'		      type='EPICS_PV' source='15iddSAXS:MirrorIn'	   dbrtype='DBR_NATIVE' description='MirrorIn' />
+    <Attribute name='PD_Dark'		      type='EPICS_PV' source='15iddSAXS:PD_Dark'	   dbrtype='DBR_NATIVE' description='PD_Dark' />
+    <Attribute name='PD_Empty'		      type='EPICS_PV' source='15iddSAXS:PD_Empty'	   dbrtype='DBR_NATIVE' description='PD_Empty' />
+    <Attribute name='PD_Sample' 	      type='EPICS_PV' source='15iddSAXS:PD_Sample'	   dbrtype='DBR_NATIVE' description='PD_Sample' />
+    <Attribute name='number_of_images'	      type='EPICS_PV' source='15iddSAXS:NumImages'	   dbrtype='DBR_NATIVE' description='number_of_images' />
+    <Attribute name='transAcquireTime'	      type='EPICS_PV' source='15iddSAXS:transAcquireTime'  dbrtype='DBR_NATIVE' description='transAcquireTime' />
+    <Attribute name='transBPM_B_Dark'	      type='EPICS_PV' source='15iddSAXS:transBPM_B_Dark'   dbrtype='DBR_NATIVE' description='transBPM_B_Dark' />
+    <Attribute name='transBPM_B_Empty'	      type='EPICS_PV' source='15iddSAXS:transBPM_B_Empty'  dbrtype='DBR_NATIVE' description='transBPM_B_Empty' />
+    <Attribute name='transBPM_B_Sample'       type='EPICS_PV' source='15iddSAXS:transBPM_B_Sample' dbrtype='DBR_NATIVE' description='transBPM_B_Sample' />
+    <Attribute name='transBPM_L_Dark'	      type='EPICS_PV' source='15iddSAXS:transBPM_L_Dark'   dbrtype='DBR_NATIVE' description='transBPM_L_Dark' />
+    <Attribute name='transBPM_L_Empty'	      type='EPICS_PV' source='15iddSAXS:transBPM_L_Empty'  dbrtype='DBR_NATIVE' description='transBPM_L_Empty' />
+    <Attribute name='transBPM_L_Sample'       type='EPICS_PV' source='15iddSAXS:transBPM_L_Sample' dbrtype='DBR_NATIVE' description='transBPM_L_Sample' />
+    <Attribute name='transBPM_R_Dark'	      type='EPICS_PV' source='15iddSAXS:transBPM_R_Dark'   dbrtype='DBR_NATIVE' description='transBPM_R_Dark' />
+    <Attribute name='transBPM_R_Empty'	      type='EPICS_PV' source='15iddSAXS:transBPM_R_Empty'  dbrtype='DBR_NATIVE' description='transBPM_R_Empty' />
+    <Attribute name='transBPM_R_Sample'       type='EPICS_PV' source='15iddSAXS:transBPM_R_Sample' dbrtype='DBR_NATIVE' description='transBPM_R_Sample' />
+    <Attribute name='transBPM_T_Dark'	      type='EPICS_PV' source='15iddSAXS:transBPM_T_Dark'   dbrtype='DBR_NATIVE' description='transBPM_T_Dark' />
+    <Attribute name='transBPM_T_Empty'	      type='EPICS_PV' source='15iddSAXS:transBPM_T_Empty'  dbrtype='DBR_NATIVE' description='transBPM_T_Empty' />
+    <Attribute name='transBPM_T_Sample'       type='EPICS_PV' source='15iddSAXS:transBPM_T_Sample' dbrtype='DBR_NATIVE' description='transBPM_T_Sample' />
+    <Attribute name='transBSPD_Dark'	      type='EPICS_PV' source='15iddSAXS:transBSPD_Dark'    dbrtype='DBR_NATIVE' description='transBSPD_Dark' />
+    <Attribute name='transBSPD_Empty'	      type='EPICS_PV' source='15iddSAXS:transBSPD_Empty'   dbrtype='DBR_NATIVE' description='transBSPD_Empty' />
+    <Attribute name='transBSPD_Sample'	      type='EPICS_PV' source='15iddSAXS:transBSPD_Sample'  dbrtype='DBR_NATIVE' description='transBSPD_Sample' />
+    <Attribute name='transI0_Dark'	      type='EPICS_PV' source='15iddSAXS:transI0_Dark'	   dbrtype='DBR_NATIVE' description='transI0_Dark' />
+    <Attribute name='transI0_Empty'	      type='EPICS_PV' source='15iddSAXS:transI0_Empty'	   dbrtype='DBR_NATIVE' description='transI0_Empty' />
+    <Attribute name='transI0_Sample'	      type='EPICS_PV' source='15iddSAXS:transI0_Sample'    dbrtype='DBR_NATIVE' description='transI0_Sample' />
+    <Attribute name='transmission'	      type='EPICS_PV' source='15iddSAXS:Transmission'	   dbrtype='DBR_NATIVE' description='transmission' />
+    <Attribute name='transPD_Dark'	      type='EPICS_PV' source='15iddSAXS:transPD_Dark'	   dbrtype='DBR_NATIVE' description='transPD_Dark' />
+    <Attribute name='transPD_Empty'	      type='EPICS_PV' source='15iddSAXS:transPD_Empty'	   dbrtype='DBR_NATIVE' description='transPD_Empty' />
+    <Attribute name='transPD_Sample'	      type='EPICS_PV' source='15iddSAXS:transPD_Sample'    dbrtype='DBR_NATIVE' description='transPD_Sample' />
+
+<!-- new stuff added 2012-05-24 -->
+    <Attribute name='coll_center_x'	      type='EPICS_PV' source='15iddSAXS:Coll_CenterX'	   dbrtype='DBR_NATIVE' description='collimator center, x, mm' />
+    <Attribute name='coll_center_y'	      type='EPICS_PV' source='15iddSAXS:Coll_CenterY'	   dbrtype='DBR_NATIVE' description='collimator center, y, mm' />
+    <Attribute name='coll_size_x'	      type='EPICS_PV' source='15iddSAXS:Coll_SizeX'	   dbrtype='DBR_NATIVE' description='collimator size, x, mm' />
+    <Attribute name='coll_size_y'	      type='EPICS_PV' source='15iddSAXS:Coll_SizeY'	   dbrtype='DBR_NATIVE' description='collimator size, y, mm' />
+
+</Attributes>
+    

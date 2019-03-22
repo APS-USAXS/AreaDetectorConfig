@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<NXcollection name="15ID-D_metadata" type="UserGroup">
+  <!-- !!! type="UserGroup" will not be needed in AD1.7 !!! -->
+  <UserName source="UserName" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:UserName</Attr>
+    <Attr name="description" type="CONST">user name listed as GUP PI</Attr>
+  </UserName>
+  <SampleTitle source="SampleTitle" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS:sampleTitle</Attr>
+    <Attr name="description" type="CONST">sample name</Attr>
+  </SampleTitle>
+  <sthick source="sthick" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:sampleThickness</Attr>
+    <Attr name="description" type="CONST">sample thickness</Attr>
+  </sthick>
+  <ScanMacro source="ScanMacro" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:SpecMacroFileName</Attr>
+    <Attr name="description" type="CONST">name of SPEC macro file</Attr>
+  </ScanMacro>
+  <EmptyFileName source="EmptyFileName" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:EmptyFileName</Attr>
+    <Attr name="description" type="CONST">Name of file to use as empty scan</Attr>
+  </EmptyFileName>
+  <GUPNumber source="GUPNumber" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:GUPNumber</Attr>
+    <Attr name="description" type="CONST">GUP proposal number</Attr>
+  </GUPNumber>
+  <StartTime source="StartTime" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:StartExposureTime</Attr>
+    <Attr name="description" type="CONST">image starting time</Attr>
+  </StartTime>
+  <EndTime source="EndTime" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:EndExposureTime</Attr>
+    <Attr name="description" type="CONST">image ending time</Attr>
+  </EndTime>
+  <SDD source="SDD" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Distance</Attr>
+    <Attr name="description" type="CONST">SDD: distance between sample and detector, mm</Attr>
+  </SDD>
+  <PresetTime source="PresetTime" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddPIL:cam1:AcquireTime</Attr>
+    <Attr name="description" type="CONST">specified time for this exposure, s</Attr>
+  </PresetTime>
+  <APS_run_cycle source="APS_run_cycle" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:RunCycle</Attr>
+    <Attr name="description" type="CONST">APS operating cycle</Attr>
+  </APS_run_cycle>
+  <USAXSslitVap source="USAXSslitVap" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c2:m7</Attr>
+    <Attr name="description" type="CONST">USAXS slit, vertical aperture, mm</Attr>
+  </USAXSslitVap>
+  <USAXSslitHap source="USAXSslitHap" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c2:m8</Attr>
+    <Attr name="description" type="CONST">USAXS slit, horizontal aperture, mm</Attr>
+  </USAXSslitHap>
+  <USAXSslitVpos source="USAXSslitVpos" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c2:m5</Attr>
+    <Attr name="description" type="CONST">USAXS slit, vertical position, mm</Attr>
+  </USAXSslitVpos>
+  <USAXSslitHpos source="USAXSslitHpos" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c2:m6</Attr>
+    <Attr name="description" type="CONST">USAXS slit, horizontal position, mm</Attr>
+  </USAXSslitHpos>
+  <wavelength source="wavelength" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15IDA:BraggLambdaRdbkAO</Attr>
+    <Attr name="description" type="CONST">monochromator wavelength, A</Attr>
+  </wavelength>
+  <wavelength_spread source="wavelength_spread" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15IDA:WavelengthSpread</Attr>
+    <Attr name="description" type="CONST">delta-lambda / lambda</Attr>
+  </wavelength_spread>
+  <monoE source="monoE" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15IDA:BraggERdbkAO</Attr>
+    <Attr name="description" type="CONST">monochromator energy, keV</Attr>
+  </monoE>
+  <idE source="idE" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15ID:Energy</Attr>
+    <Attr name="description" type="CONST">ID energy, keV</Attr>
+  </idE>
+  <SRcurrent source="SRcurrent" type="ND_ATTR">
+    <Attr name="pv" type="CONST">S:SRcurrentAI</Attr>
+    <Attr name="description" type="CONST">Storage Ring Current, mA</Attr>
+  </SRcurrent>
+  <filterAl source="filterAl" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddUSX:pf4:filterAl</Attr>
+    <Attr name="description" type="CONST">Al filter, mm</Attr>
+  </filterAl>
+  <filterTi source="filterTi" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddUSX:pf4:filterTi</Attr>
+    <Attr name="description" type="CONST">Ti filter, mm</Attr>
+  </filterTi>
+  <filterGlass source="filterGlass" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddUSX:pf42:filterGlass</Attr>
+    <Attr name="description" type="CONST">Glass filter, mm</Attr>
+  </filterGlass>
+  <I0_V source="I0_V" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddUSX:ath01:ana01:ai05</Attr>
+    <Attr name="description" type="CONST">I0 voltage, V</Attr>
+  </I0_V>
+  <I00_V source="I00_V" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddUSX:ath01:ana01:ai06</Attr>
+    <Attr name="description" type="CONST">I00 voltage, V</Attr>
+  </I00_V>
+  <I000_cts source="I000_cts" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15IDB:scaler1.S2</Attr>
+    <Attr name="description" type="CONST">I000 counts</Attr>
+  </I000_cts>
+  <I0_cts source="I0_cts" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:vsc:c0.S2</Attr>
+    <Attr name="description" type="CONST">I0 counts</Attr>
+  </I0_cts>
+  <I0_cts_gated source="I0_cts_gated" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:vsc:c1.S2</Attr>
+    <Attr name="description" type="CONST">I0 counts gated</Attr>
+  </I0_cts_gated>
+  <I00_cts source="I00_cts" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:vsc:c0.S3</Attr>
+    <Attr name="description" type="CONST">I00 counts</Attr>
+  </I00_cts>
+  <scaler_freq source="scaler_freq" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:vsc:c0.FREQ</Attr>
+    <Attr name="description" type="CONST">scaler frequency, Hz</Attr>
+  </scaler_freq>
+  <I0_gain source="I0_gain" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddUSX:fem02:seq01:gain</Attr>
+    <Attr name="description" type="CONST">I0 V/A gain</Attr>
+  </I0_gain>
+  <I00_gain source="I00_gain" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddUSX:fem03:seq01:gain</Attr>
+    <Attr name="description" type="CONST">I00 V/A gain</Attr>
+  </I00_gain>
+  <GuardslitVap source="GuardslitVap" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:GSlit1V:size.VAL</Attr>
+    <Attr name="description" type="CONST">Guard slit, vertical aperture, mm</Attr>
+  </GuardslitVap>
+  <GuardslitHap source="GuardslitHap" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:GSlit1H:size.VAL</Attr>
+    <Attr name="description" type="CONST">Guard slit, horizontal aperture, mm</Attr>
+  </GuardslitHap>
+  <GuardslitVpos source="GuardslitVpos" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:GSlit1V:center.VAL</Attr>
+    <Attr name="description" type="CONST">Guard slit, vertical position, mm</Attr>
+  </GuardslitVpos>
+  <GuardslitHpos source="GuardslitHpos" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:GSlit1H:center.VAL</Attr>
+    <Attr name="description" type="CONST">Guard slit, horizontal position, mm</Attr>
+  </GuardslitHpos>
+  <PIN_Y source="PIN_Y" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:mxv:c0:m8.RBV</Attr>
+    <Attr name="description" type="CONST">pinhole y stage position, mm</Attr>
+  </PIN_Y>
+  <PIN_Z source="PIN_Z" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:mxv:c0:m2.RBV</Attr>
+    <Attr name="description" type="CONST">pinhole z stage position, mm</Attr>
+  </PIN_Z>
+  <WAXS_X source="WAXS_X" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c0:m4.RBV</Attr>
+    <Attr name="description" type="CONST">waxs x stage position, mm</Attr>
+  </WAXS_X>
+  <mr_enc source="mr_enc" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:mr:encoder</Attr>
+    <Attr name="description" type="CONST">mr readback, deg</Attr>
+  </mr_enc>
+  <mx source="mx" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c0:m2.RBV</Attr>
+    <Attr name="description" type="CONST">mx stage position, mm</Attr>
+  </mx>
+  <my source="my" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c0:m3.RBV</Attr>
+    <Attr name="description" type="CONST">my stage position, mm</Attr>
+  </my>
+  <m2rp source="m2rp" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:pzt:m2</Attr>
+    <Attr name="description" type="CONST">m2rp voltage, V</Attr>
+  </m2rp>
+  <msrp source="msrp" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:pzt:m4</Attr>
+    <Attr name="description" type="CONST">msrp voltage, V</Attr>
+  </msrp>
+  <sx source="sx" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c2:m1.RBV</Attr>
+    <Attr name="description" type="CONST">sample x stage position, mm</Attr>
+  </sx>
+  <sy source="sy" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:m58:c2:m2.RBV</Attr>
+    <Attr name="description" type="CONST">sample y stage position, mm</Attr>
+  </sy>
+  <sa source="sa" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:xps:c0:m7.RBV</Attr>
+    <Attr name="description" type="CONST">sample azimuthal rotation, degrees</Attr>
+  </sa>
+  <pin_ccd_center_x source="pin_ccd_center_x" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:BeamCenterX:NXdetector</Attr>
+    <Attr name="description" type="CONST">horizontal position of beam center on CCD, mm</Attr>
+  </pin_ccd_center_x>
+  <pin_ccd_center_y source="pin_ccd_center_y" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:BeamCenterY:NXdetector</Attr>
+    <Attr name="description" type="CONST">vertical position of beam center on CCD, mm</Attr>
+  </pin_ccd_center_y>
+  <pin_ccd_center_x_pixel source="pin_ccd_center_x_pixel" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:BeamCenterX</Attr>
+    <Attr name="description" type="CONST">horizontal position of beam center on CCD, pixels</Attr>
+  </pin_ccd_center_x_pixel>
+  <pin_ccd_center_y_pixel source="pin_ccd_center_y_pixel" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:BeamCenterY</Attr>
+    <Attr name="description" type="CONST">vertical position of beam center on CCD, pixels</Attr>
+  </pin_ccd_center_y_pixel>
+  <pin_ccd_pixel_size_x source="pin_ccd_pixel_size_x" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:PinPixSizeX</Attr>
+    <Attr name="description" type="CONST">CCD pixel size, horizontal, mm</Attr>
+  </pin_ccd_pixel_size_x>
+  <pin_ccd_pixel_size_y source="pin_ccd_pixel_size_y" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:PinPixSizeY</Attr>
+    <Attr name="description" type="CONST">CCD pixel size, vertical, mm</Attr>
+  </pin_ccd_pixel_size_y>
+  <pin_ccd_tilt_x source="pin_ccd_tilt_x" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:DetectorTiltX</Attr>
+    <Attr name="description" type="CONST">CCD tilt, x direction, degrees</Attr>
+  </pin_ccd_tilt_x>
+  <pin_ccd_tilt_y source="pin_ccd_tilt_y" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:DetectorTiltY</Attr>
+    <Attr name="description" type="CONST">CCD tilt, y direction, degrees</Attr>
+  </pin_ccd_tilt_y>
+  <ccdProtection source="ccdProtection" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:ccdProtection</Attr>
+    <Attr name="description" type="CONST">CCD protection bit</Attr>
+  </ccdProtection>
+  <Pin_TrPD source="Pin_TrPD" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Pin_TrPD</Attr>
+    <Attr name="description" type="CONST">Pin_TrPD</Attr>
+  </Pin_TrPD>
+  <Pin_TrI0 source="Pin_TrI0" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Pin_TrI0</Attr>
+    <Attr name="description" type="CONST">Pin_TrI0</Attr>
+  </Pin_TrI0>
+  <Pin_TrPDgain source="Pin_TrPDgain" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Pin_TrPDgain</Attr>
+    <Attr name="description" type="CONST">Pin_TrPDgain</Attr>
+  </Pin_TrPDgain>
+  <Pin_TrI0gain source="Pin_TrI0gain" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Pin_TrI0gain</Attr>
+    <Attr name="description" type="CONST">Pin_TrI0gain</Attr>
+  </Pin_TrI0gain>
+</NXcollection>

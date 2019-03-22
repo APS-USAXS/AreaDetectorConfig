@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="no" ?>
+<group name="entry">
+    <attribute name="NX_class" source="constant" value="NXentry" type="string" />
+
+	<dataset name="description"   value="NXtomo" source="constant" type="string">
+		<attribute name="URL" source="constant" type="string"
+		   value="http://download.nexusformat.org/doc/html/classes/applications/NXtomo.html"/>
+		<attribute name="version" source="constant" type="string" value="2.0"/>
+	</dataset>
+
+    <dataset name="title"      source="ndattribute" ndattribute="SampleTitle">
+	  <attribute name="target" source="constant" value="/entry/entry/title" type="string" />
+	</dataset>
+    <dataset name="start_time" source="ndattribute" ndattribute="StartTime" />
+    <dataset name="end_time"   source="ndattribute" ndattribute="EndTime" />
+	
+    <group name="instrument">
+      <attribute name="NX_class" source="constant" value="NXinstrument" type="string" />
+
+	    <group name="source">
+          <attribute name="NX_class" source="constant" value="NXsource" type="string" />
+          <dataset name="type" source="constant" value="Synchrotron X-ray Source" type="string" />
+          <dataset name="name" source="constant" value="Advanced Photon Source" type="string">
+		    <attribute name="short_name" source="constant" value="APS" type="string" />
+		  </dataset>
+          <dataset name="probe" source="constant" value="x-ray " type="string" />
+        </group>          <!-- end group source -->
+
+      <group name="detector">
+        <attribute name="NX_class" source="constant" value="NXdetector" type="string" />
+
+        <dataset name="data" source="detector" det_default="true">
+          <attribute name="signal" source="constant" value="1" type="int" />
+		  <attribute name="target" source="constant" value="/entry/instrument/detector/data" type="string" />
+        </dataset>
+		
+        <!-- TODO: dataset name="image_key" source="ndattribute" ndattribute="image_key"  -->
+		<dataset name="image_key" source="ndattribute" ndattribute="image_key">
+		  <attribute name="target" source="ndattribute" value="/entry/instrument/detector/image_key" type="string" />
+		</dataset>
+
+        <dataset name="x_pixel_size" source="ndattribute" ndattribute="ImgPixSizeX">
+          <attribute name="units" source="ndattribute" ndattribute="ImgPixSizeX_EGU" />
+        </dataset>
+        <dataset name="y_pixel_size" source="ndattribute" ndattribute="ImgPixSizeY">
+          <attribute name="units" source="ndattribute" ndattribute="ImgPixSizeY_EGU" />
+        </dataset>
+		
+		<dataset name="distance"   source="ndattribute" ndattribute="ScintToAnalDistance">
+		  <attribute name="units" source="ndattribute" ndattribute="ScintToAnalDistance_EGU" />
+		</dataset>
+
+        <!-- optional data to consider
+		dataset : x_rotation_axis_pixel_position
+		dataset : y_rotation_axis_pixel_position
+		-->
+		
+      </group>            <!-- end group detector -->
+      <group name="NDAttributes" ndattr_default="true">
+        <attribute name="NX_class" source="constant" value="NXcollection" type="string" />
+		<!--
+		Any attributes (defined in the attributes file) that are not placed
+		at other places in this layout will be written to this group.
+		That is what ndattr_default="true" means.
+		-->
+      </group>            <!-- end group NDAttributes (default) -->
+
+    </group>              <!-- end group instrument -->
+
+  <group name="sample">
+	<attribute name="NX_class" source="constant" value="NXsample" type="string" />
+    <hardlink name="name" target="/entry/title" />
+	<dataset name="rotation_angle" source="ndattribute" ndattribute="Tomo_Rot_Angle">
+	  <attribute name="units" source="ndattribute" ndattribute="Tomo_Rot_Angle_EGU" />
+	  <attribute name="target" source="constant" value="/entry/sample/rotation_angle" type="string" />
+	</dataset>
+  </group>            <!-- end group sample -->
+
+  <group name="control">
+	<attribute name="NX_class" source="constant" value="NXmonitor" type="string" />
+	<dataset name="data" source="ndattribute" ndattribute="I0_cts_gated" />
+	<dataset name="gain" source="ndattribute" ndattribute="I0_gain" />
+  </group>            <!-- end group control -->
+
+
+    <group name="data">
+      <attribute name="NX_class" source="constant" value="NXdata" type="string" />
+      
+      <hardlink name="data" target="/entry/instrument/detector/data" />
+      <hardlink name="image_key" target="/entry/instrument/detector/image_key" />
+      <hardlink name="rotation_angle " target="/entry/sample/rotation_angle" />
+    </group>              <!-- end group data -->
+
+</group>                <!-- end group entry -->

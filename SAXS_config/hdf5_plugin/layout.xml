@@ -1,0 +1,126 @@
+<?xml version="1.0" standalone="no" ?>
+<hdf5_layout>
+  <group name="entry"> 
+    <attribute name="NX_class"      value="NXentry" source="constant" type="string"/>
+    <hardlink  name="ADCoreVersion" target="/entry/Metadata/ADCoreVersion"/>
+    <attribute name="default"       value="data"    source="constant" type="string"/>
+    
+    <dataset  name="definition"     value="NXsas" source="constant" type="string"/>
+    <dataset  name="program_name"   value="EPICS areaDetector" source="constant" type="string"/>
+    <hardlink name="run_cycle"      target="/entry/Metadata/APS_run_cycle"/>
+    <hardlink name="start_time"     target="/entry/Metadata/StartTime"/>
+    <hardlink name="end_time"       target="/entry/Metadata/EndTime"/>
+    <hardlink name="title"          target="/entry/Metadata/SampleTitle"/>
+    <hardlink name="GUPNumber"      target="/entry/Metadata/GUPNumber"/>
+
+    <group name="control">    <!-- start group control -->
+      <attribute name="NX_class" value="NXmonitor" source="constant" type="string"/> 
+      
+      <dataset  name="mode"      value="timer"     source="constant" type="string"/>
+      <hardlink name="preset"    target="/entry/Metadata/PresetTime"/>
+      <hardlink name="integral"  target="/entry/Metadata/I0_cts_gated"/>
+    </group>                 <!-- end group control -->
+ 
+    <group name="data">      <!-- start group data -->
+      <attribute name="NX_class"    value="NXdata"       source="constant" type="string"/> 
+      <attribute name="signal"      value="data"         source="constant" type="string"/> 
+      
+      <hardlink  name="data"        target="/entry/instrument/detector/data"/>
+      <dataset   name="description" value="Pilatus"      source="constant" type="string"/>
+      <dataset   name="local_name"  value="Pilatus 100K" source="constant" type="string"/>
+      <dataset   name="make"        value="Dectris"      source="constant" type="string"/>
+      <dataset   name="model"       value="Pilatus"      source="constant" type="string"/>
+   </group>              <!-- end group data -->
+
+
+    <group name="instrument">      <!-- start group instrument -->
+      <attribute name="NX_class" value="NXinstrument" source="constant" type="string"/> 
+      
+      <dataset  name="name"      value="USAXS"     source="constant" type="string"/>
+      <group name="aperture">      <!-- start group aperture -->
+        <attribute name="NX_class"    value="NXaperture" source="constant" type="string"/> 
+        
+        <dataset  name="description"  value="USAXSslit" source="constant" type="string"/>
+        <hardlink name="hcenter"   target="/entry/Metadata/USAXSslitHpos"/>
+        <hardlink name="vcenter"   target="/entry/Metadata/USAXSslitVpos"/>
+        <hardlink name="hsize"     target="/entry/Metadata/USAXSslitHap"/>
+        <hardlink name="vsize"     target="/entry/Metadata/USAXSslitVap"/>
+      </group>                   <!-- end group aperture --> 
+      <group name="collimator">    <!-- start group collimator -->
+        <attribute name="NX_class" value="NXcollimator" source="constant" type="string"/> 
+        
+        <dataset  name="absorbing_material"      value="Tungsten"     source="constant" type="string"/>
+        <group name="geometry">    <!-- start group geometry -->
+            <attribute name="NX_class" value="NXgeometry" source="constant" type="string"/> 
+            
+            <group name="shape">       <!-- start group shape -->
+                <attribute name="NX_class" value="NXshape" source="constant" type="string"/> 
+                
+                <dataset  name="shape"      value="nxbox"     source="constant" type="string"/>
+                <dataset  name="size"       value="see xsize and ysize"     source="constant" type="string"/>
+                <hardlink name="xcenter"    target="/entry/Metadata/USAXSslitHpos"/>
+                <hardlink name="ycenter"    target="/entry/Metadata/USAXSslitVpos"/>
+                <hardlink name="xsize"      target="/entry/Metadata/USAXSslitHap"/>
+                <hardlink name="ysize"      target="/entry/Metadata/USAXSslitVap"/>
+            </group>                   <!-- end group shape --> 
+         </group>                   <!-- end group geometry --> 
+      </group>                   <!-- end group collimator --> 
+      <group name="monochromator"> <!-- start group monochromator -->
+        <attribute name="NX_class" value="NXmonochromator" source="constant" type="string"/> 
+        
+        <hardlink name="energy"            target="/entry/Metadata/monoE"/>
+        <hardlink name="wavelength"        target="/entry/Metadata/wavelength"/>
+        <hardlink name="wavelength_spread" target="/entry/Metadata/wavelength_spread"/>
+      </group>                         <!-- end group monochromator -->      
+      <group name="source">        <!-- start group source -->
+        <attribute name="NX_class"           value="NXsource"   source="constant" type="string"/> 
+ 
+        <dataset   name="facility_beamline"  value="9ID"        source="constant" type="string"/>
+        <dataset   name="facility_name"      value="APS"        source="constant" type="string"/>
+        <dataset   name="facility_sector"    value="XSD/9ID"    source="constant" type="string"/>
+        <dataset   name="facility_station"   value="C"          source="constant" type="string"/>
+        <dataset   name="name"               value="Advanced Photon Source Undulator A, sector 9ID-C"     source="constant" type="string"/>
+        <dataset   name="probe"              value="x-ray"      source="constant" type="string"/>
+        <dataset   name="type"               value="Synchrotron X-ray Source"     source="constant" type="string"/>
+      </group>                   <!-- end group source -->       
+      <group name="detector">      <!-- start group detector -->
+        <attribute name="NX_class" value="NXdetector" source="constant" type="string"/> 
+        <attribute name="signal" value="data" source="constant" type="string"/> 
+        
+        <dataset name="data" source="detector" det_default="true"> 
+           <attribute name="target"   source="constant" value="/entry/instrument/detector/data" type="string"/> 
+        </dataset> 
+        <hardlink name="distance" target="/entry/Metadata/SDD"/>
+        <hardlink name="beam_center_x" target="/entry/Metadata/pin_ccd_center_x_pixel"/>
+        <hardlink name="beam_center_y" target="/entry/Metadata/pin_ccd_center_y_pixel"/>
+        <hardlink name="x_pixel_size" target="/entry/Metadata/pin_ccd_pixel_size_x"/>
+        <hardlink name="y_pixel_size" target="/entry/Metadata/pin_ccd_pixel_size_y"/>
+      </group>            <!-- end group detector -->
+
+      <!-- <group name="performance"/ -->
+    </group>                      <!-- end group instrument --> 
+
+    <group name="sample">    <!-- start group sample -->
+      <attribute name="NX_class"     value="NXsample" source="constant" type="string"/> 
+      
+      <hardlink  name="name"         target="/entry/Metadata/SampleTitle"/>
+      <hardlink  name="aequatorial_angle"     target="/entry/Metadata/sa"/>
+      <hardlink  name="sample_x"     target="/entry/Metadata/sx"/>
+      <hardlink  name="sample_y"     target="/entry/Metadata/sy"/>
+      <hardlink  name="thickness"    target="/entry/Metadata/sthick"/>
+   </group>                  <!-- end group sample -->
+
+    <group name="user">    <!-- start group user -->
+      <attribute name="NX_class" value="NXuser" source="constant" type="string"/> 
+      
+      <hardlink  name="name"     target="/entry/Metadata/UserName"/>
+      <hardlink  name="proposal_number"     target="/entry/Metadata/GUPNumber"/>
+    </group>                  <!-- end group user -->
+
+    <group name="Metadata" ndattr_default="true">            <!-- start group Metadata (default) -->
+      <attribute name="NX_class" value="NXcollection" source="constant" type="string"/> 
+    </group>            <!-- end group Metadata (default) --> 
+
+
+  </group>                <!-- end group entry -->
+</hdf5_layout>

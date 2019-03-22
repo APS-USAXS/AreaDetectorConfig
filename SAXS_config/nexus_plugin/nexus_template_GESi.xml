@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<NXroot>
+  <Attr name="default" outtype="NX_CHAR" type="CONST">entry</Attr>
+
+  <NXentry name="entry">
+    <Attr name="default" outtype="NX_CHAR" type="CONST">data</Attr>
+	<Attr name="ADCoreVersion" source="ADCoreVersion" type="ND_ATTR"/>
+    
+    <beamline_support_version outtype="NX_CHAR" type="CONST">1.0</beamline_support_version>
+
+    <definition outtype="NX_CHAR" type="CONST">
+        <Attr name="version" outtype="NX_CHAR" type="CONST">1.0b</Attr>
+    	<Attr name="URL" outtype="NX_CHAR" type="CONST">http://download.nexusformat.org/doc/html/ClassDefinitions-Application.html#NXsas</Attr>NXsas</definition>
+  	<start_time source="StartTime" type="CONST">unrecorded</start_time>
+  	<end_time source="iso8601_time_stamp" type="ND_ATTR" />
+    <title source="SampleTitle" type="ND_ATTR" />
+    
+    <NXdata name="data">
+		<Attr name="signal" outtype="NX_CHAR" type="CONST">data</Attr>
+		<data type="pArray">
+			<Attr name="signal" outtype="NX_CHAR" type="CONST">1</Attr>
+			<Attr name="units" outtype="NX_CHAR" type="CONST">none</Attr>
+			<Attr name="ImageCounter" source="ImageCounter" type="ND_ATTR" />
+			<Attr name="make" source="Manufacturer" type="ND_ATTR" />
+			<Attr name="model" source="Model" type="ND_ATTR" />
+			<Attr name="maxSizeX" source="MaxSizeX" type="ND_ATTR" />
+			<Attr name="maxSizeY" source="MaxSizeY" type="ND_ATTR" />
+			<Attr name="ScanMacro" source="ScanMacro" type="ND_ATTR" />
+		</data>
+		<local_name outtype="NX_CHAR" source="area_detector_prefactor" type="ND_ATTR" />
+		<manufacturer outtype="NX_CHAR" source="Manufacturer" type="ND_ATTR" />
+		<model outtype="NX_CHAR" source="Model" type="ND_ATTR" />
+    </NXdata>
+    
+    <NXinstrument name="instrument">
+	
+		<name outtype="NX_CHAR" type="CONST">15ID SAXS</name>
+	
+		<NXcollimator name="collimator">		
+		    <absorbing_material outtype="NX_CHAR" type="CONST">stainless steel</absorbing_material>
+		    <NXgeometry name="geometry">
+		      <NXshape name="shape">			     
+		          <shape>nxbox</shape>
+		          <size type="CONST">see xsize and ysize</size>
+		          <xsize source="coll_size_x" type="ND_ATTR">
+				     <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+				  </xsize>
+		          <ysize source="coll_size_y" type="ND_ATTR">
+			      	<Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+			 	  </ysize>
+		          <xcenter source="coll_center_x" type="ND_ATTR">
+			      	<Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+			  	  </xcenter>
+		          <ycenter source="coll_center_y" type="ND_ATTR">
+			       <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+			  	  </ycenter>
+		      </NXshape>
+		    </NXgeometry>
+		</NXcollimator>
+		
+		<NXaperture name="aperture" type="UserGroup">	
+		    <description type="CONST">USAXSslit</description>
+		    <hsize source="USAXSslitHap" type="ND_ATTR">
+		    	  <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+		    </hsize>
+		    <vsize source="USAXSslitVap" type="ND_ATTR">
+		    	  <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+		    </vsize>
+		    <hcenter source="USAXSslitHpos" type="ND_ATTR">
+		    	  <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+		    </hcenter>
+		    <vcenter source="USAXSslitVpos" type="ND_ATTR">
+		    	  <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+		    </vcenter>
+		</NXaperture>
+      
+    	<NXdetector name="detector">
+    		<beam_center_x source="ccd_beam_center_x" type="ND_ATTR">
+		      <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+			</beam_center_x>
+    		<beam_center_y source="ccd_beam_center_y" type="ND_ATTR">
+		      <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+			</beam_center_y>
+    		<distance source="SDD" type="ND_ATTR">
+        		<Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+        	</distance>
+    		<x_pixel_size source="ccd_pixel_size_x" type="ND_ATTR">
+		      <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+			</x_pixel_size>
+    		<y_pixel_size source="ccd_pixel_size_y" type="ND_ATTR">
+		      <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+			</y_pixel_size>
+        </NXdetector>
+
+        <NXmonochromator name="monochromator">
+        	<energy source="monoE" type="ND_ATTR">
+        		<Attr name="units" outtype="NX_CHAR" type="CONST">keV</Attr>
+        	</energy>
+        	<wavelength source="wavelength" type="ND_ATTR">
+        		<Attr name="units" outtype="NX_CHAR" type="CONST">A</Attr>
+        	</wavelength>
+        	<wavelength_spread source="wavelength_spread" type="ND_ATTR" />
+        </NXmonochromator>
+
+        <NXsource name="source" short_name="APS-15ID-D">
+        	<name outtype="NX_CHAR" type="CONST">Advanced Photon Source Undulator A, sector 15ID-D</name>
+        	<probe outtype="NX_CHAR" type="CONST">x-ray</probe>
+        	<type outtype="NX_CHAR" type="CONST">Synchrotron X-ray Source</type>
+        	<facility_name outtype="NX_CHAR" type="CONST">APS</facility_name>
+        	<facility_sector outtype="NX_CHAR" type="CONST">XSD/ChemMatCARS</facility_sector>
+        	<facility_beamline outtype="NX_CHAR" type="CONST">15ID</facility_beamline>
+        	<facility_station outtype="NX_CHAR" type="CONST">D</facility_station>
+        </NXsource>
+    </NXinstrument>
+
+    <NXmonitor name="control">
+		<integral source="I0_cts" type="ND_ATTR" />
+		<mode type="CONST">timer</mode>     
+    	<preset source="PresetTime" type="ND_ATTR" />
+    </NXmonitor>
+    
+    <NXsample name="sample">
+		<name source="SampleTitle" type="ND_ATTR" />
+    	<thickness source="sthick" type="ND_ATTR">
+	    <Attr name="units" outtype="NX_CHAR" type="CONST">mm</Attr>
+    	</thickness>
+    </NXsample>
+  	
+    <run_cycle outtype="NX_CHAR" source="APS_run_cycle" type="ND_ATTR" />
+    <program_name outtype="NX_CHAR" type="CONST">NeXus areaDetector</program_name>
+    
+    <NXuser name="user1">
+        <name source="UserName" type="ND_ATTR" />
+		<proposal_number outtype="NX_CHAR" source="GUPNumber" type="ND_ATTR" />
+    </NXuser>
+  	
+    <AD_template_ID type="CONST">$Id: nexus_template_GESi.xml 9446 2016-08-05 16:46:02Z jemian $</AD_template_ID>
+
+    <NXcollection name="link_rules" type="UserGroup">
+        <link>
+			<Attr name="source" outtype="NX_CHAR" type="CONST">/entry/data</Attr>
+        	<Attr name="target" outtype="NX_CHAR" type="CONST">/entry/instrument/detector/data</Attr>
+        	<!-- make data appear under detector, as well -->
+	   </link>
+    </NXcollection>
+    
+  <NXcollection name="EPICS_PV_metadata" type="UserGroup"><Attr name="modified" type="CONST">2012-05-24T16:41:53.194111</Attr><!-- !!! type="UserGroup" will not be needed in AD1.7 !!! --><APS_run_cycle source="APS_run_cycle" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:RunCycle</Attr><Attr name="description" type="CONST">APS operating cycle</Attr></APS_run_cycle><BPMX source="BPMX" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c1:m3</Attr><Attr name="description" type="CONST">BPMX</Attr></BPMX><BPMY source="BPMY" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c1:m4</Attr><Attr name="description" type="CONST">BPMY</Attr></BPMY><BPM_B_Dark source="BPM_B_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BPM_B_Dark</Attr><Attr name="description" type="CONST">BPM_B_Dark</Attr></BPM_B_Dark><BPM_B_Empty source="BPM_B_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BPM_B_Empty</Attr><Attr name="description" type="CONST">BPM_B_Empty</Attr></BPM_B_Empty><BPM_B_Spl source="BPM_B_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S5</Attr><Attr name="description" type="CONST">BPM_B_Spl</Attr></BPM_B_Spl><BPM_L_Dark source="BPM_L_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BPM_L_Dark</Attr><Attr name="description" type="CONST">BPM_L_Dark</Attr></BPM_L_Dark><BPM_L_Empty source="BPM_L_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BPM_L_Empty</Attr><Attr name="description" type="CONST">BPM_L_Empty</Attr></BPM_L_Empty><BPM_L_Spl source="BPM_L_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S2</Attr><Attr name="description" type="CONST">BPM_L_Spl</Attr></BPM_L_Spl><BPM_R_Dark source="BPM_R_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BPM_R_Dark</Attr><Attr name="description" type="CONST">BPM_R_Dark</Attr></BPM_R_Dark><BPM_R_Empty source="BPM_R_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BPM_R_Empty</Attr><Attr name="description" type="CONST">BPM_R_Empty</Attr></BPM_R_Empty><BPM_R_Spl source="BPM_R_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S4</Attr><Attr name="description" type="CONST">BPM_R_Spl</Attr></BPM_R_Spl><BPM_T_Dark source="BPM_T_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BPM_T_Dark</Attr><Attr name="description" type="CONST">BPM_T_Dark</Attr></BPM_T_Dark><BPM_T_Empty source="BPM_T_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BPM_T_Empty</Attr><Attr name="description" type="CONST">BPM_T_Empty</Attr></BPM_T_Empty><BPM_T_Spl source="BPM_T_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S3</Attr><Attr name="description" type="CONST">BPM_T_Spl</Attr></BPM_T_Spl><BPM_bottom_cts source="BPM_bottom_cts" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S5</Attr><Attr name="description" type="CONST">BPM bottom counts</Attr></BPM_bottom_cts><BPM_left_cts source="BPM_left_cts" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S2</Attr><Attr name="description" type="CONST">BPM left counts</Attr></BPM_left_cts><BPM_right_cts source="BPM_right_cts" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S4</Attr><Attr name="description" type="CONST">BPM right counts</Attr></BPM_right_cts><BPM_top_cts source="BPM_top_cts" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S3</Attr><Attr name="description" type="CONST">BPM top counts</Attr></BPM_top_cts><BSPD_Value_Dark source="BSPD_Value_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BSPD_Value_Dark</Attr><Attr name="description" type="CONST">BSPD_Value_Dark</Attr></BSPD_Value_Dark><BSPD_Value_Empty source="BSPD_Value_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BSPD_Value_Empty</Attr><Attr name="description" type="CONST">BSPD_Value_Empty</Attr></BSPD_Value_Empty><BSPD_Value_Spl source="BSPD_Value_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S7</Attr><Attr name="description" type="CONST">BSPD_Value_Spl</Attr></BSPD_Value_Spl><BSX source="BSX" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c1:m1</Attr><Attr name="description" type="CONST">BSX</Attr></BSX><BSY source="BSY" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c1:m2</Attr><Attr name="description" type="CONST">BSY</Attr></BSY><BeamIn source="BeamIn" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:BeamIn</Attr><Attr name="description" type="CONST">BeamIn</Attr></BeamIn><BsPD_cts source="BsPD_cts" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S7</Attr><Attr name="description" type="CONST">BsPD counts</Attr></BsPD_cts><CMIR source="CMIR" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c0:m7</Attr><Attr name="description" type="CONST">CMIR</Attr></CMIR><CollX source="CollX" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c2:m2</Attr><Attr name="description" type="CONST">CollX</Attr></CollX><CollY source="CollY" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c2:m3</Attr><Attr name="description" type="CONST">CollY</Attr></CollY><Ctilt source="Ctilt" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:xps:c0:m8</Attr><Attr name="description" type="CONST">Ctilt</Attr></Ctilt><Cyaw source="Cyaw" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c2:m1</Attr><Attr name="description" type="CONST">Cyaw</Attr></Cyaw><Dark_Filename source="Dark_Filename" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:FileName_Dark</Attr><Attr name="description" type="CONST">Dark_Filename</Attr></Dark_Filename><DiodeIn source="DiodeIn" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:DiodeIn</Attr><Attr name="description" type="CONST">DiodeIn</Attr></DiodeIn><Empty_Filename source="Empty_Filename" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:FileName_Empty</Attr><Attr name="description" type="CONST">Empty_Filename</Attr></Empty_Filename><GUPNumber source="GUPNumber" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:GUPNumber</Attr><Attr name="description" type="CONST">GUP proposal number</Attr></GUPNumber><I00_V source="I00_V" type="ND_ATTR"><Attr name="pv" type="CONST">15iddUSX:ath01:ana01:ai06</Attr><Attr name="description" type="CONST">I00 voltage, V</Attr></I00_V><I0_Dark source="I0_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:I0_Dark</Attr><Attr name="description" type="CONST">I0_Dark</Attr></I0_Dark><I0_Empty source="I0_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:I0_Empty</Attr><Attr name="description" type="CONST">I0_Empty</Attr></I0_Empty><I0_Spl source="I0_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S8</Attr><Attr name="description" type="CONST">I0_Spl</Attr></I0_Spl><I0_V source="I0_V" type="ND_ATTR"><Attr name="pv" type="CONST">15iddUSX:ath01:ana01:ai05</Attr><Attr name="description" type="CONST">I0 voltage, V</Attr></I0_V><I0_cts source="I0_cts" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S8</Attr><Attr name="description" type="CONST">I0 counts</Attr></I0_cts><MirrorIn source="MirrorIn" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:MirrorIn</Attr><Attr name="description" type="CONST">MirrorIn</Attr></MirrorIn><NosePD_Value_Dark source="NosePD_Value_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:NosePD_Value_Dark</Attr><Attr name="description" type="CONST">NosePD_Value_Dark</Attr></NosePD_Value_Dark><NosePD_Value_Empty source="NosePD_Value_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:NosePD_Value_Empty</Attr><Attr name="description" type="CONST">NosePD_Value_Empty</Attr></NosePD_Value_Empty><NosePD_Value_Spl source="NosePD_Value_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:NosePD_Value_Spl</Attr><Attr name="description" type="CONST">NosePD_Value_Spl</Attr></NosePD_Value_Spl><NosePD_cts source="NosePD_cts" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S6</Attr><Attr name="description" type="CONST">NosePD counts</Attr></NosePD_cts><PresetTime source="PresetTime" type="ND_ATTR"><Attr name="pv" type="CONST">Mar165_A:cam1:AcquireTime</Attr><Attr name="description" type="CONST">specified time for this exposure, s</Attr></PresetTime><SDD source="SDD" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:SDD.VAL</Attr><Attr name="description" type="CONST">SDD: distance between sample and detector, mm</Attr></SDD><SFX source="SFX" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c0:m4</Attr><Attr name="description" type="CONST">SFX</Attr></SFX><SFY_I source="SFY_I" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c0:m5</Attr><Attr name="description" type="CONST">SFY_I</Attr></SFY_I><SFY_O source="SFY_O" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c0:m6</Attr><Attr name="description" type="CONST">SFY_O</Attr></SFY_O><SPEC_AcquireTime source="SPEC_AcquireTime" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:AcquireTime</Attr><Attr name="description" type="CONST">SPEC AcquireTime</Attr></SPEC_AcquireTime><SRX source="SRX" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c0:m2</Attr><Attr name="description" type="CONST">SRX</Attr></SRX><SRY source="SRY" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c0:m3</Attr><Attr name="description" type="CONST">SRY</Attr></SRY><SRZ source="SRZ" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c0:m1</Attr><Attr name="description" type="CONST">SRZ</Attr></SRZ><SRcurrent source="SRcurrent" type="ND_ATTR"><Attr name="pv" type="CONST">S:SRcurrentAI</Attr><Attr name="description" type="CONST">Storage Ring Current, mA</Attr></SRcurrent><SampleTitle source="SampleTitle" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:SampleName</Attr><Attr name="description" type="CONST">sample name</Attr></SampleTitle><ScanMacro source="ScanMacro" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:SpecMacroFileName</Attr><Attr name="description" type="CONST">name of SPEC macro file</Attr></ScanMacro><SpLX source="SpLX" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c0:m8</Attr><Attr name="description" type="CONST">SpLX</Attr></SpLX><SpX source="SpX" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c1:m8</Attr><Attr name="description" type="CONST">SpX</Attr></SpX><SpY source="SpY" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:m58:c1:m7</Attr><Attr name="description" type="CONST">SpY</Attr></SpY><USAXSslitHap source="USAXSslitHap" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:m58:c2:m8</Attr><Attr name="description" type="CONST">USAXS slit, horizontal aperture, mm</Attr></USAXSslitHap><USAXSslitHpos source="USAXSslitHpos" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:m58:c2:m6</Attr><Attr name="description" type="CONST">USAXS slit, horizontal position, mm</Attr></USAXSslitHpos><USAXSslitVap source="USAXSslitVap" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:m58:c2:m7</Attr><Attr name="description" type="CONST">USAXS slit, vertical aperture, mm</Attr></USAXSslitVap><USAXSslitVpos source="USAXSslitVpos" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:m58:c2:m5</Attr><Attr name="description" type="CONST">USAXS slit, vertical position, mm</Attr></USAXSslitVpos><UserName source="UserName" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:UserName</Attr><Attr name="description" type="CONST">user name listed as GUP PI</Attr></UserName><area_detector_prefactor source="area_detector_prefactor" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:CCDPV</Attr><Attr name="description" type="CONST">area_detector_prefactor</Attr></area_detector_prefactor><base_directory source="base_directory" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:directory</Attr><Attr name="description" type="CONST">base_directory</Attr></base_directory><ccd_beam_center_x source="ccd_beam_center_x" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:CCD_BeamCenterX.VAL</Attr><Attr name="description" type="CONST">CCD beam X center</Attr></ccd_beam_center_x><ccd_beam_center_y source="ccd_beam_center_y" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:CCD_BeamCenterY.VAL</Attr><Attr name="description" type="CONST">CCD beam Y center</Attr></ccd_beam_center_y><ccd_center_x source="ccd_center_x" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:CCD_CenterX.VAL</Attr><Attr name="description" type="CONST">CCD X center</Attr></ccd_center_x><ccd_center_y source="ccd_center_y" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:CCD_CenterY.VAL</Attr><Attr name="description" type="CONST">CCD Y center</Attr></ccd_center_y><ccd_pixel_size_x source="ccd_pixel_size_x" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:CCD_PixSizeX.VAL</Attr><Attr name="description" type="CONST">CCD X pixel size</Attr></ccd_pixel_size_x><ccd_pixel_size_y source="ccd_pixel_size_y" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:CCD_PixSizeY.VAL</Attr><Attr name="description" type="CONST">CCD Y pixel size</Attr></ccd_pixel_size_y><coll_center_x source="coll_center_x" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:Coll_CenterX</Attr><Attr name="description" type="CONST">collimator center, x, mm</Attr></coll_center_x><coll_center_y source="coll_center_y" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:Coll_CenterY</Attr><Attr name="description" type="CONST">collimator center, y, mm</Attr></coll_center_y><coll_size_x source="coll_size_x" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:Coll_SizeX</Attr><Attr name="description" type="CONST">collimator size, x, mm</Attr></coll_size_x><coll_size_y source="coll_size_y" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:Coll_SizeY</Attr><Attr name="description" type="CONST">collimator size, y, mm</Attr></coll_size_y><filterAl source="filterAl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddUSX:pf4:filterAl</Attr><Attr name="description" type="CONST">Al filter, mm</Attr></filterAl><filterGlass source="filterGlass" type="ND_ATTR"><Attr name="pv" type="CONST">15iddUSX:pf42:filterGlass</Attr><Attr name="description" type="CONST">Glass filter, mm</Attr></filterGlass><filterTi source="filterTi" type="ND_ATTR"><Attr name="pv" type="CONST">15iddUSX:pf4:filterTi</Attr><Attr name="description" type="CONST">Ti filter, mm</Attr></filterTi><idE source="idE" type="ND_ATTR"><Attr name="pv" type="CONST">15ID:Energy</Attr><Attr name="description" type="CONST">ID energy, keV</Attr></idE><iso8601_time_stamp source="iso8601_time_stamp" type="ND_ATTR"><Attr name="pv" type="CONST">15iddLAX:timestamp</Attr><Attr name="description" type="CONST">time stamp (ISO 8601) at end of image</Attr></iso8601_time_stamp><monoE source="monoE" type="ND_ATTR"><Attr name="pv" type="CONST">15IDA:BraggERdbkAO</Attr><Attr name="description" type="CONST">monochromator energy, keV</Attr></monoE><number_of_images source="number_of_images" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:NumImages</Attr><Attr name="description" type="CONST">number_of_images</Attr></number_of_images><sample_thickness source="sample_thickness" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:sampleThickness</Attr><Attr name="description" type="CONST">sample thickness</Attr></sample_thickness><scaler_elapsed_count_time source="scaler_elapsed_count_time" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.T</Attr><Attr name="description" type="CONST">scaler elapsed count time, s</Attr></scaler_elapsed_count_time><scaler_freq source="scaler_freq" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.FREQ</Attr><Attr name="description" type="CONST">scaler frequency, Hz</Attr></scaler_freq><scaler_preset_count_time source="scaler_preset_count_time" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.TP</Attr><Attr name="description" type="CONST">scaler preset count time, s</Attr></scaler_preset_count_time><seconds_cts source="seconds_cts" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:vsc:c0.S1</Attr><Attr name="description" type="CONST">seconds counts</Attr></seconds_cts><transAcquireTime source="transAcquireTime" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transAcquireTime</Attr><Attr name="description" type="CONST">transAcquireTime</Attr></transAcquireTime><transBPM_B_Dark source="transBPM_B_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_B_Dark</Attr><Attr name="description" type="CONST">transBPM_B_Dark</Attr></transBPM_B_Dark><transBPM_B_Empty source="transBPM_B_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_B_Empty</Attr><Attr name="description" type="CONST">transBPM_B_Empty</Attr></transBPM_B_Empty><transBPM_B_Spl source="transBPM_B_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_B_Spl</Attr><Attr name="description" type="CONST">transBPM_B_Spl</Attr></transBPM_B_Spl><transBPM_L_Dark source="transBPM_L_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_L_Dark</Attr><Attr name="description" type="CONST">transBPM_L_Dark</Attr></transBPM_L_Dark><transBPM_L_Empty source="transBPM_L_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_L_Empty</Attr><Attr name="description" type="CONST">transBPM_L_Empty</Attr></transBPM_L_Empty><transBPM_L_Spl source="transBPM_L_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_L_Spl</Attr><Attr name="description" type="CONST">transBPM_L_Spl</Attr></transBPM_L_Spl><transBPM_R_Dark source="transBPM_R_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_R_Dark</Attr><Attr name="description" type="CONST">transBPM_R_Dark</Attr></transBPM_R_Dark><transBPM_R_Empty source="transBPM_R_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_R_Empty</Attr><Attr name="description" type="CONST">transBPM_R_Empty</Attr></transBPM_R_Empty><transBPM_R_Spl source="transBPM_R_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_R_Spl</Attr><Attr name="description" type="CONST">transBPM_R_Spl</Attr></transBPM_R_Spl><transBPM_T_Dark source="transBPM_T_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_T_Dark</Attr><Attr name="description" type="CONST">transBPM_T_Dark</Attr></transBPM_T_Dark><transBPM_T_Empty source="transBPM_T_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_T_Empty</Attr><Attr name="description" type="CONST">transBPM_T_Empty</Attr></transBPM_T_Empty><transBPM_T_Spl source="transBPM_T_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBPM_T_Spl</Attr><Attr name="description" type="CONST">transBPM_T_Spl</Attr></transBPM_T_Spl><transBSPD_Value_Dark source="transBSPD_Value_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBSPD_Value_Dark</Attr><Attr name="description" type="CONST">transBSPD_Value_Dark</Attr></transBSPD_Value_Dark><transBSPD_Value_Empty source="transBSPD_Value_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBSPD_Value_Empty</Attr><Attr name="description" type="CONST">transBSPD_Value_Empty</Attr></transBSPD_Value_Empty><transBSPD_Value_Spl source="transBSPD_Value_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transBSPD_Value_Spl</Attr><Attr name="description" type="CONST">transBSPD_Value_Spl</Attr></transBSPD_Value_Spl><transI0_Dark source="transI0_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transI0_Dark</Attr><Attr name="description" type="CONST">transI0_Dark</Attr></transI0_Dark><transI0_Empty source="transI0_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transI0_Empty</Attr><Attr name="description" type="CONST">transI0_Empty</Attr></transI0_Empty><transI0_Spl source="transI0_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transI0_Spl</Attr><Attr name="description" type="CONST">transI0_Spl</Attr></transI0_Spl><transNosePD_Value_Dark source="transNosePD_Value_Dark" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transNosePD_Value_Dark</Attr><Attr name="description" type="CONST">transNosePD_Value_Dark</Attr></transNosePD_Value_Dark><transNosePD_Value_Empty source="transNosePD_Value_Empty" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transNosePD_Value_Empty</Attr><Attr name="description" type="CONST">transNosePD_Value_Empty</Attr></transNosePD_Value_Empty><transNosePD_Value_Spl source="transNosePD_Value_Spl" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:transNosePD_Value_Spl</Attr><Attr name="description" type="CONST">transNosePD_Value_Spl</Attr></transNosePD_Value_Spl><transmission source="transmission" type="ND_ATTR"><Attr name="pv" type="CONST">15iddSAXS:Transmission</Attr><Attr name="description" type="CONST">transmission</Attr></transmission><wavelength source="wavelength" type="ND_ATTR"><Attr name="pv" type="CONST">15IDA:BraggLambdaRdbkAO</Attr><Attr name="description" type="CONST">monochromator wavelength, A</Attr></wavelength><wavelength_spread source="wavelength_spread" type="ND_ATTR"><Attr name="pv" type="CONST">15IDSAXS:WavelengthSpread</Attr><Attr name="description" type="CONST">delta-lambda / lambda</Attr></wavelength_spread></NXcollection></NXentry>
+
+
+<!--
+########### SVN repository information ###################
+# $Date: 2016-08-05 11:46:02 -0500 (Fri, 05 Aug 2016) $
+# $Author: jemian $
+# $Revision: 9446 $
+# $HeadURL: https://subversion.xray.aps.anl.gov/bcdaioc/9idc_AD/area_detector/SAXS_config/nexus_plugin/nexus_template_GESi.xml $
+# $Id: nexus_template_GESi.xml 9446 2016-08-05 16:46:02Z jemian $
+########### SVN repository information ###################
+-->
+
+</NXroot>
