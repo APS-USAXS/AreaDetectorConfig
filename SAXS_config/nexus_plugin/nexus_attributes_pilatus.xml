@@ -27,15 +27,15 @@
     <Attribute name="sthick"		     type="EPICS_PV" source="9idcLAX:sampleThickness"		dbrtype="DBR_NATIVE" description="sample thickness"/>
     <Attribute name="ScanMacro" 	     type="EPICS_PV" source="9idcLAX:SpecMacroFileName"	dbrtype="DBR_NATIVE" description="name of SPEC macro file"/>
     <!--Attribute name="ScanMacro"     type="EPICS_PV" source="9idcLAX:string19"          dbrtype="DBR_NATIVE" description="name of SPEC macro file"/-->
-    <Attribute name="EmptyFileName" 	 type="EPICS_PV" source="9idcLAX:USAXS_Pin:EmptyFileName"	dbrtype="DBR_NATIVE" description="Name of file to use as empty scan"/>
+    <Attribute name="EmptyFileName" 	 type="EPICS_PV" source="9idcLAX:SAXS:EmptyFileName"	dbrtype="DBR_NATIVE" description="Name of file to use as empty scan"/>
     <Attribute name="USAXS_Q"	     type="EPICS_PV" source="9idcLAX:USAXS:Q"	dbrtype="DBR_NATIVE" description="Q"/>
     <Attribute name="is_2D_USAXS_scan"	     type="EPICS_PV" source="9idcLAX:USAXS:is2DUSAXSscan"	dbrtype="DBR_NATIVE" description="does this scan use 2D collimated geometry"/>
 
     <Attribute name="GUPNumber" 	     type="EPICS_PV" source="9idcLAX:GUPNumber"		dbrtype="DBR_NATIVE" description="GUP proposal number"/>
 
-    <Attribute name="StartTime" 	     type="EPICS_PV" source="9idcLAX:USAXS_Pin:StartExposureTime"	dbrtype="DBR_NATIVE" description="image starting time"/>
-    <Attribute name="EndTime"		     type="EPICS_PV" source="9idcLAX:USAXS_Pin:EndExposureTime"   dbrtype="DBR_NATIVE" description="image ending time"/>
-    <Attribute name="SDD"		     type="EPICS_PV" source="9idcLAX:USAXS_Pin:Distance"	dbrtype="DBR_NATIVE" description="SDD: distance between sample and detector, mm"/>
+    <Attribute name="StartTime" 	     type="EPICS_PV" source="9idcLAX:SAXS:StartExposureTime"	dbrtype="DBR_NATIVE" description="image starting time"/>
+    <Attribute name="EndTime"		     type="EPICS_PV" source="9idcLAX:SAXS:EndExposureTime"   dbrtype="DBR_NATIVE" description="image ending time"/>
+    <Attribute name="SDD"		     type="EPICS_PV" source="9idcLAX:SAXS:Distance"	dbrtype="DBR_NATIVE" description="SDD: distance between sample and detector, mm"/>
     <Attribute name="PresetTime"	     type="EPICS_PV" source="9idcPIL:cam1:AcquireTime"		dbrtype="DBR_NATIVE" description="specified time for this exposure, s"/>
     <Attribute name="APS_run_cycle"	     type="EPICS_PV" source="9idcLAX:RunCycle" 		dbrtype="DBR_NATIVE" description="APS operating cycle"/>
 
@@ -93,21 +93,21 @@
     <Attribute name="sy"		     type="EPICS_PV" source="9idcLAX:m58:c2:m2.RBV"		dbrtype="DBR_NATIVE" description="sample y stage position, mm"/>
     <Attribute name="sa"		     type="EPICS_PV" source="9idcLAX:xps:c0:m7.RBV"		dbrtype="DBR_NATIVE" description="sample azimuthal rotation, degrees"/>
  
-    <Attribute name="pin_ccd_center_x"	     type="EPICS_PV" source="9idcLAX:USAXS_Pin:BeamCenterX:NXdetector"	dbrtype="DBR_NATIVE" description="horizontal position of beam center on CCD, mm"/>
-    <Attribute name="pin_ccd_center_y"	     type="EPICS_PV" source="9idcLAX:USAXS_Pin:BeamCenterY:NXdetector"	dbrtype="DBR_NATIVE" description="vertical position of beam center on CCD, mm"/>
-    <Attribute name="pin_ccd_center_x_pixel" type="EPICS_PV" source="9idcLAX:USAXS_Pin:BeamCenterX"	dbrtype="DBR_NATIVE" description="horizontal position of beam center on CCD, pixels"/>
-    <Attribute name="pin_ccd_center_y_pixel" type="EPICS_PV" source="9idcLAX:USAXS_Pin:BeamCenterY"	dbrtype="DBR_NATIVE" description="vertical position of beam center on CCD, pixels"/>
-    <Attribute name="pin_ccd_pixel_size_x"   type="EPICS_PV" source="9idcLAX:USAXS_Pin:PinPixSizeX"	dbrtype="DBR_NATIVE" description="CCD pixel size, horizontal, mm"/>
-    <Attribute name="pin_ccd_pixel_size_y"   type="EPICS_PV" source="9idcLAX:USAXS_Pin:PinPixSizeY"	dbrtype="DBR_NATIVE" description="CCD pixel size, vertical, mm"/>
-    <Attribute name="pin_ccd_tilt_x"   		 type="EPICS_PV" source="9idcLAX:USAXS_Pin:DetectorTiltX"	dbrtype="DBR_NATIVE" description="CCD tilt, x direction, degrees"/>
-    <Attribute name="pin_ccd_tilt_y"   		 type="EPICS_PV" source="9idcLAX:USAXS_Pin:DetectorTiltY"	dbrtype="DBR_NATIVE" description="CCD tilt, y direction, degrees"/>
+    <Attribute name="pin_ccd_center_x"	     type="EPICS_PV" source="9idcLAX:SAXS:BeamCenterX:NXdetector"	dbrtype="DBR_NATIVE" description="horizontal position of beam center on CCD, mm"/>
+    <Attribute name="pin_ccd_center_y"	     type="EPICS_PV" source="9idcLAX:SAXS:BeamCenterY:NXdetector"	dbrtype="DBR_NATIVE" description="vertical position of beam center on CCD, mm"/>
+    <Attribute name="pin_ccd_center_x_pixel" type="EPICS_PV" source="9idcLAX:SAXS:BeamCenterX"	dbrtype="DBR_NATIVE" description="horizontal position of beam center on CCD, pixels"/>
+    <Attribute name="pin_ccd_center_y_pixel" type="EPICS_PV" source="9idcLAX:SAXS:BeamCenterY"	dbrtype="DBR_NATIVE" description="vertical position of beam center on CCD, pixels"/>
+    <Attribute name="pin_ccd_pixel_size_x"   type="EPICS_PV" source="9idcLAX:SAXS:PinPixSizeX"	dbrtype="DBR_NATIVE" description="CCD pixel size, horizontal, mm"/>
+    <Attribute name="pin_ccd_pixel_size_y"   type="EPICS_PV" source="9idcLAX:SAXS:PinPixSizeY"	dbrtype="DBR_NATIVE" description="CCD pixel size, vertical, mm"/>
+    <Attribute name="pin_ccd_tilt_x"   		 type="EPICS_PV" source="9idcLAX:SAXS:DetectorTiltX"	dbrtype="DBR_NATIVE" description="CCD tilt, x direction, degrees"/>
+    <Attribute name="pin_ccd_tilt_y"   		 type="EPICS_PV" source="9idcLAX:SAXS:DetectorTiltY"	dbrtype="DBR_NATIVE" description="CCD tilt, y direction, degrees"/>
         
     <Attribute name="ccdProtection"   	     type="EPICS_PV" source="9idcLAX:ccdProtection" 		dbrtype="DBR_NATIVE" description="CCD protection bit"/>
 
-    <Attribute name="Pin_TrPD"       type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrPD"	dbrtype="DBR_NATIVE" description="Pin_TrPD"/>
-    <Attribute name="Pin_TrI0"       type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrI0"	dbrtype="DBR_NATIVE" description="Pin_TrI0"/>
-    <Attribute name="Pin_TrPDgain"   type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrPDgain"	dbrtype="DBR_NATIVE" description="Pin_TrPDgain"/>
-    <Attribute name="Pin_TrI0gain"   type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrI0gain"	dbrtype="DBR_NATIVE" description="Pin_TrI0gain"/>
+    <Attribute name="SAXS_TrPD"       type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrPD"	dbrtype="DBR_NATIVE" description="SAXS_TrPD"/>
+    <Attribute name="SAXS_TrI0"       type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrI0"	dbrtype="DBR_NATIVE" description="SAXS_TrI0"/>
+    <Attribute name="SAXS_TrPDgain"   type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrPDgain"	dbrtype="DBR_NATIVE" description="SAXS_TrPDgain"/>
+    <Attribute name="SAXS_TrI0gain"   type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrI0gain"	dbrtype="DBR_NATIVE" description="SAXS_TrI0gain"/>
  
     <Attribute name="DriverFileName" type="PARAM" source="FULL_FILE_NAME" datatype="STRING" description="Driver file name"/>
 

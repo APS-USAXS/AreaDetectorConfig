@@ -26,15 +26,15 @@
     <Attribute name="sthick"		     type="EPICS_PV" source="9idcLAX:sampleThickness"		dbrtype="DBR_NATIVE" description="sample thickness"/>
     <Attribute name="ScanMacro" 	     type="EPICS_PV" source="9idcLAX:SpecMacroFileName"	dbrtype="DBR_NATIVE" description="name of SPEC macro file"/>
     <!--Attribute name="ScanMacro"     type="EPICS_PV" source="9idcLAX:string19"          dbrtype="DBR_NATIVE" description="name of SPEC macro file"/-->
-    <Attribute name="EmptyFileName" 	 type="EPICS_PV" source="9idcLAX:USAXS_Pin:EmptyFileName"	dbrtype="DBR_NATIVE" description="Name of file to use as empty scan"/>
+    <Attribute name="EmptyFileName" 	 type="EPICS_PV" source="9idcLAX:SAXS:EmptyFileName"	dbrtype="DBR_NATIVE" description="Name of file to use as empty scan"/>
     <Attribute name="USAXS_Q"	     type="EPICS_PV" source="9idcLAX:USAXS:Q"	dbrtype="DBR_NATIVE" description="Q"/>
     <Attribute name="is_2D_USAXS_scan"	     type="EPICS_PV" source="9idcLAX:USAXS:is2DUSAXSscan"	dbrtype="DBR_NATIVE" description="does this scan use 2D collimated geometry"/>
 
     <Attribute name="GUPNumber" 	     type="EPICS_PV" source="9idcLAX:GUPNumber"		dbrtype="DBR_NATIVE" description="GUP proposal number"/>
 
-    <Attribute name="StartTime" 	     type="EPICS_PV" source="9idcLAX:USAXS_Pin:StartExposureTime"	dbrtype="DBR_NATIVE" description="image starting time"/>
-    <Attribute name="EndTime"		     type="EPICS_PV" source="9idcLAX:USAXS_Pin:EndExposureTime"   dbrtype="DBR_NATIVE" description="image ending time"/>
-    <Attribute name="SDD"		     type="EPICS_PV" source="9idcLAX:USAXS_Pin:Distance"	dbrtype="DBR_NATIVE" description="SDD: distance between sample and detector, mm"/>
+    <Attribute name="StartTime" 	     type="EPICS_PV" source="9idcLAX:SAXS:StartExposureTime"	dbrtype="DBR_NATIVE" description="image starting time"/>
+    <Attribute name="EndTime"		     type="EPICS_PV" source="9idcLAX:SAXS:EndExposureTime"   dbrtype="DBR_NATIVE" description="image ending time"/>
+    <Attribute name="SDD"		     type="EPICS_PV" source="9idcLAX:SAXS:Distance"	dbrtype="DBR_NATIVE" description="SDD: distance between sample and detector, mm"/>
     <!--Attribute name="PresetTime"	     type="EPICS_PV" source="15iddPIL:cam1:AcquireTime"		dbrtype="DBR_NATIVE" description="specified time for this exposure, s"/-->
     <Attribute name="APS_run_cycle"	     type="EPICS_PV" source="9idcLAX:RunCycle" 		dbrtype="DBR_NATIVE" description="APS operating cycle"/>
 
@@ -93,10 +93,10 @@
  
     <Attribute name="ccdProtection"   	     type="EPICS_PV" source="9idcLAX:ccdProtection" 		dbrtype="DBR_NATIVE" description="CCD protection bit"/>
 
-    <Attribute name="Pin_TrPD"       type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrPD"	dbrtype="DBR_NATIVE" description="Pin_TrPD"/>
-    <Attribute name="Pin_TrI0"       type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrI0"	dbrtype="DBR_NATIVE" description="Pin_TrI0"/>
-    <Attribute name="Pin_TrPDgain"   type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrPDgain"	dbrtype="DBR_NATIVE" description="Pin_TrPDgain"/>
-    <Attribute name="Pin_TrI0gain"   type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrI0gain"	dbrtype="DBR_NATIVE" description="Pin_TrI0gain"/>
+    <Attribute name="SAXS_TrPD"       type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrPD"	dbrtype="DBR_NATIVE" description="SAXS_TrPD"/>
+    <Attribute name="SAXS_TrI0"       type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrI0"	dbrtype="DBR_NATIVE" description="SAXS_TrI0"/>
+    <Attribute name="SAXS_TrPDgain"   type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrPDgain"	dbrtype="DBR_NATIVE" description="SAXS_TrPDgain"/>
+    <Attribute name="SAXS_TrI0gain"   type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrI0gain"	dbrtype="DBR_NATIVE" description="SAXS_TrI0gain"/>
  
 
     <!-- 2014-09-26,PRJ:  added at request of Jan Ilavsky -->

@@ -89,8 +89,8 @@
 
     <Attribute name="StartTime" 	     type="EPICS_PV" source="9idcLAX:USAXS:StartExpTimeStamp"	dbrtype="DBR_STRING" description="image starting time"/>
     <Attribute name="EndTime"		     type="EPICS_PV" source="9idcLAX:USAXS:EndExpTimeStamp"   dbrtype="DBR_STRING" description="image ending time"/>
-    <Attribute name="SDD"		     	type="EPICS_PV" source="9idcLAX:USAXS_Pin:Distance"	dbrtype="DBR_NATIVE" description="USAXS SDD: distance between sample and detector"/>
-    <Attribute name="SDD_EGU"		     type="EPICS_PV" source="9idcLAX:USAXS_Pin:Distance.EGU"	dbrtype="DBR_NATIVE" description="SDD: units"/>
+    <Attribute name="SDD"		     	type="EPICS_PV" source="9idcLAX:SAXS:Distance"	dbrtype="DBR_NATIVE" description="USAXS SDD: distance between sample and detector"/>
+    <Attribute name="SDD_EGU"		     type="EPICS_PV" source="9idcLAX:SAXS:Distance.EGU"	dbrtype="DBR_NATIVE" description="SDD: units"/>
     <!--Attribute name="PresetTime"	     type="EPICS_PV" source="15iddPIL:cam1:AcquireTime"		dbrtype="DBR_NATIVE" description="specified time for this exposure, s"/-->
     <Attribute name="APS_run_cycle"	     type="EPICS_PV" source="9idcLAX:RunCycle" 		dbrtype="DBR_NATIVE" description="APS operating cycle"/>
 
@@ -150,10 +150,10 @@
     <Attribute name="rotation_angle"	   type="EPICS_PV" source="9idcLAX:USAXS_Img:Tomo_Rot_Angle"		dbrtype="DBR_NATIVE" description="sample rotation angle"/>
     <Attribute name="rotation_angle_EGU"  type="EPICS_PV" source="9idcLAX:USAXS_Img:Tomo_Rot_Angle.EGU"		dbrtype="DBR_NATIVE" description="sample rotation angle units"/>
  
-    <Attribute name="Pin_TrPD"       type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrPD"	dbrtype="DBR_NATIVE" description="Pin_TrPD"/>
-    <Attribute name="Pin_TrI0"       type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrI0"	dbrtype="DBR_NATIVE" description="Pin_TrI0"/>
-    <Attribute name="Pin_TrPDgain"   type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrPDgain"	dbrtype="DBR_NATIVE" description="Pin_TrPDgain"/>
-    <Attribute name="Pin_TrI0gain"   type="EPICS_PV" source="9idcLAX:USAXS_Pin:Pin_TrI0gain"	dbrtype="DBR_NATIVE" description="Pin_TrI0gain"/>
+    <Attribute name="SAXS_TrPD"       type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrPD"	dbrtype="DBR_NATIVE" description="SAXS_TrPD"/>
+    <Attribute name="SAXS_TrI0"       type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrI0"	dbrtype="DBR_NATIVE" description="SAXS_TrI0"/>
+    <Attribute name="SAXS_TrPDgain"   type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrPDgain"	dbrtype="DBR_NATIVE" description="SAXS_TrPDgain"/>
+    <Attribute name="SAXS_TrI0gain"   type="EPICS_PV" source="9idcLAX:SAXS:SAXS_TrI0gain"	dbrtype="DBR_NATIVE" description="SAXS_TrI0gain"/>
  
 
     <!-- 2014-09-26,PRJ:  added at request of Jan Ilavsky -->

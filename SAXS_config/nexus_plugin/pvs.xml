@@ -18,7 +18,7 @@
     <Attr name="description" type="CONST">name of SPEC macro file</Attr>
   </ScanMacro>
   <EmptyFileName source="EmptyFileName" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:EmptyFileName</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:EmptyFileName</Attr>
     <Attr name="description" type="CONST">Name of file to use as empty scan</Attr>
   </EmptyFileName>
   <GUPNumber source="GUPNumber" type="ND_ATTR">
@@ -26,15 +26,15 @@
     <Attr name="description" type="CONST">GUP proposal number</Attr>
   </GUPNumber>
   <StartTime source="StartTime" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:StartExposureTime</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:StartExposureTime</Attr>
     <Attr name="description" type="CONST">image starting time</Attr>
   </StartTime>
   <EndTime source="EndTime" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:EndExposureTime</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:EndExposureTime</Attr>
     <Attr name="description" type="CONST">image ending time</Attr>
   </EndTime>
   <SDD source="SDD" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Distance</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:Distance</Attr>
     <Attr name="description" type="CONST">SDD: distance between sample and detector, mm</Attr>
   </SDD>
   <PresetTime source="PresetTime" type="ND_ATTR">
@@ -190,55 +190,55 @@
     <Attr name="description" type="CONST">sample azimuthal rotation, degrees</Attr>
   </sa>
   <pin_ccd_center_x source="pin_ccd_center_x" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:BeamCenterX:NXdetector</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:BeamCenterX:NXdetector</Attr>
     <Attr name="description" type="CONST">horizontal position of beam center on CCD, mm</Attr>
   </pin_ccd_center_x>
   <pin_ccd_center_y source="pin_ccd_center_y" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:BeamCenterY:NXdetector</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:BeamCenterY:NXdetector</Attr>
     <Attr name="description" type="CONST">vertical position of beam center on CCD, mm</Attr>
   </pin_ccd_center_y>
   <pin_ccd_center_x_pixel source="pin_ccd_center_x_pixel" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:BeamCenterX</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:BeamCenterX</Attr>
     <Attr name="description" type="CONST">horizontal position of beam center on CCD, pixels</Attr>
   </pin_ccd_center_x_pixel>
   <pin_ccd_center_y_pixel source="pin_ccd_center_y_pixel" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:BeamCenterY</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:BeamCenterY</Attr>
     <Attr name="description" type="CONST">vertical position of beam center on CCD, pixels</Attr>
   </pin_ccd_center_y_pixel>
   <pin_ccd_pixel_size_x source="pin_ccd_pixel_size_x" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:PinPixSizeX</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:PinPixSizeX</Attr>
     <Attr name="description" type="CONST">CCD pixel size, horizontal, mm</Attr>
   </pin_ccd_pixel_size_x>
   <pin_ccd_pixel_size_y source="pin_ccd_pixel_size_y" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:PinPixSizeY</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:PinPixSizeY</Attr>
     <Attr name="description" type="CONST">CCD pixel size, vertical, mm</Attr>
   </pin_ccd_pixel_size_y>
   <pin_ccd_tilt_x source="pin_ccd_tilt_x" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:DetectorTiltX</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:DetectorTiltX</Attr>
     <Attr name="description" type="CONST">CCD tilt, x direction, degrees</Attr>
   </pin_ccd_tilt_x>
   <pin_ccd_tilt_y source="pin_ccd_tilt_y" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:DetectorTiltY</Attr>
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:DetectorTiltY</Attr>
     <Attr name="description" type="CONST">CCD tilt, y direction, degrees</Attr>
   </pin_ccd_tilt_y>
   <ccdProtection source="ccdProtection" type="ND_ATTR">
     <Attr name="pv" type="CONST">15iddLAX:ccdProtection</Attr>
     <Attr name="description" type="CONST">CCD protection bit</Attr>
   </ccdProtection>
-  <Pin_TrPD source="Pin_TrPD" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Pin_TrPD</Attr>
-    <Attr name="description" type="CONST">Pin_TrPD</Attr>
-  </Pin_TrPD>
-  <Pin_TrI0 source="Pin_TrI0" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Pin_TrI0</Attr>
-    <Attr name="description" type="CONST">Pin_TrI0</Attr>
-  </Pin_TrI0>
-  <Pin_TrPDgain source="Pin_TrPDgain" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Pin_TrPDgain</Attr>
-    <Attr name="description" type="CONST">Pin_TrPDgain</Attr>
-  </Pin_TrPDgain>
-  <Pin_TrI0gain source="Pin_TrI0gain" type="ND_ATTR">
-    <Attr name="pv" type="CONST">15iddLAX:USAXS_Pin:Pin_TrI0gain</Attr>
-    <Attr name="description" type="CONST">Pin_TrI0gain</Attr>
-  </Pin_TrI0gain>
+  <SAXS_TrPD source="SAXS_TrPD" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:SAXS_TrPD</Attr>
+    <Attr name="description" type="CONST">SAXS_TrPD</Attr>
+  </SAXS_TrPD>
+  <SAXS_TrI0 source="SAXS_TrI0" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:SAXS_TrI0</Attr>
+    <Attr name="description" type="CONST">SAXS_TrI0</Attr>
+  </SAXS_TrI0>
+  <SAXS_TrPDgain source="SAXS_TrPDgain" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:SAXS_TrPDgain</Attr>
+    <Attr name="description" type="CONST">SAXS_TrPDgain</Attr>
+  </SAXS_TrPDgain>
+  <SAXS_TrI0gain source="SAXS_TrI0gain" type="ND_ATTR">
+    <Attr name="pv" type="CONST">15iddLAX:SAXS:SAXS_TrI0gain</Attr>
+    <Attr name="description" type="CONST">SAXS_TrI0gain</Attr>
+  </SAXS_TrI0gain>
 </NXcollection>
