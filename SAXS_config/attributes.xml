@@ -19,7 +19,7 @@
     <!-- TODO: add EGU to all float PVs once ADCore bug is fixed -->
     
     <Attribute name="UserName"		     type="EPICS_PV"	 source="9idcLAX:UserName"			    dbrtype="DBR_NATIVE"     description="user name listed as GUP PI"/>
-    <Attribute name="SampleTitle"	     type="EPICS_PV"	 source="9idcLAX:USAXS:sampleTitle"		    dbrtype="DBR_NATIVE"     description="sample name"/>
+    <Attribute name="SampleTitle"	     type="EPICS_PV"	 source="9idcLAX:USAXS:sampleTitle"		    dbrtype="DBR_STRING"     description="sample name"/>
     <Attribute name="sthick"		     type="EPICS_PV"	 source="9idcLAX:sampleThickness"		    dbrtype="DBR_NATIVE"     description="sample thickness"/>
     <Attribute name="ScanMacro" 	     type="EPICS_PV"	 source="9idcLAX:SpecMacroFileName"		    dbrtype="DBR_NATIVE"     description="name of SPEC macro file"/>
 <!-- Beamtime Scheduling System experiment info  -->
@@ -109,10 +109,10 @@
  
     <Attribute name="ccdProtection"   	     type="EPICS_PV"	 source="9idcLAX:ccdProtection" 		    dbrtype="DBR_NATIVE"     description="CCD protection bit"/>
 
-    <Attribute name="SAXS_TrPD"		     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrPD"		    dbrtype="DBR_NATIVE"     description="SAXS_TrPD"/>
-    <Attribute name="SAXS_TrI0"		     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrI0"		    dbrtype="DBR_NATIVE"     description="SAXS_TrI0"/>
-    <Attribute name="SAXS_TrPDgain"	     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrPDgain"	    dbrtype="DBR_NATIVE"     description="SAXS_TrPDgain"/>
-    <Attribute name="SAXS_TrI0gain"	     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrI0gain"	    dbrtype="DBR_NATIVE"     description="SAXS_TrI0gain"/>
+    <Attribute name="Pin_TrPD"		     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrPD"		    dbrtype="DBR_NATIVE"     description="SAXS_TrPD"/>
+    <Attribute name="Pin_TrI0"		     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrI0"		    dbrtype="DBR_NATIVE"     description="SAXS_TrI0"/>
+    <Attribute name="Pin_TrPDgain"	     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrPDgain"	    dbrtype="DBR_NATIVE"     description="SAXS_TrPDgain"/>
+    <Attribute name="Pin_TrI0gain"	     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrI0gain"	    dbrtype="DBR_NATIVE"     description="SAXS_TrI0gain"/>
 
     <!-- Linkam temperature controller -->
     <Attribute name="linkam_ci94_temp"       type="EPICS_PV"	 source="9idcLAX:ci94:temp"			    dbrtype="DBR_NATIVE"     description="linkam_ci94_temp"/>
