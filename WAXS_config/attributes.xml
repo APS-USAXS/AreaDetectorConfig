@@ -19,7 +19,7 @@
 
     <!-- TODO: add EGU to all float PVs once ADCore bug is fixed -->
     <Attribute name="UserName"		     type="EPICS_PV" source="9idcLAX:UserName" 		        dbrtype="DBR_NATIVE" description="user name listed as GUP PI"/>
-    <Attribute name="SampleTitle"	     type="EPICS_PV" source="9idcLAX:USAXS:sampleTitle"	    dbrtype="DBR_STRING" description="sample name"/>
+    <Attribute name="SampleTitle"	     type="EPICS_PV" source="9idcLAX:sampleTitle"	    dbrtype="DBR_STRING" description="sample name"/>
     <Attribute name="sthick"		     type="EPICS_PV" source="9idcLAX:sampleThickness"		dbrtype="DBR_NATIVE" description="sample thickness"/>
     <Attribute name="ScanMacro" 	     type="EPICS_PV" source="9idcLAX:SpecMacroFileName"	    dbrtype="DBR_NATIVE" description="name of SPEC macro file"/>
 <!-- Beamtime Scheduling System experiment info  -->
@@ -36,6 +36,28 @@
     <Attribute name="BSS_time_end" 	     type="EPICS_PV"	 source="9id_bss:time_end"		    dbrtype="DBR_NATIVE"     description="Experiment end"/>
     <Attribute name="BSS_timestamp"      type="EPICS_PV"	 source="9id_bss:timestamp"		    dbrtype="DBR_NATIVE"     description="Update timestamp"/>
     <Attribute name="BSS_title" 	     type="EPICS_PV"	 source="9id_bss:title"			    dbrtype="DBR_NATIVE"     description="Experiment name"/>
+
+<!-- apsbss PVs info  -->
+    <Attribute name="ESAF_raw"     type="EPICS_PV"	 source="9idc:bss:esaf:raw"	        dbrtype="DBR_STRING"     description="raw ESAF entry (YAML-format)"/>
+    <Attribute name="Proposal_raw"     type="EPICS_PV"	 source="9idc:bss:proposal:raw"	        dbrtype="DBR_STRING"     description="raw Proposal entry (YAML-format)"/>
+
+<!-- Sample PVs info  -->
+    <Attribute name="Sample_Description"     type="EPICS_PV"	 source="9idcSample:Description"	        dbrtype="DBR_STRING"     description="Sample Description"/>
+    <Attribute name="Sample_ChemicalFormula" type="EPICS_PV"	 source="9idcSample:ChemicalFormula"        dbrtype="DBR_STRING"     description="Sample Chemical Formula (CIF)"/>
+    <Attribute name="Sample_Temperature"     type="EPICS_PV"	 source="9idcSample:Temperature"		    dbrtype="DBR_NATIVE"     description="Sample Temperature [C]"/>
+    <Attribute name="Sample_Concentration"   type="EPICS_PV"	 source="9idcSample:Concentration"		    dbrtype="DBR_NATIVE"     description="Sample Concentration"/>
+    <Attribute name="Sample_Density"         type="EPICS_PV"	 source="9idcSample:Density"    		    dbrtype="DBR_NATIVE"     description="Sample Density [g/cm3]"/>
+    <Attribute name="Sample_VolumeFraction"  type="EPICS_PV"	 source="9idcSample:VolumeFraction"		    dbrtype="DBR_NATIVE"     description="Sample VolumeFraction"/>
+    <Attribute name="Sample_ScatteringLengthDensity"   type="EPICS_PV"	 source="9idcSample:ScatteringLengthDensity"  dbrtype="DBR_NATIVE"     description="Sample ScatteringLengthDensity"/>
+    <Attribute name="Sample_MagneticField"   type="EPICS_PV"	 source="9idcSample:MagneticField"		    dbrtype="DBR_NATIVE"     description="Sample MagneticField"/>
+    <Attribute name="Sample_MagneticFieldDir"   type="EPICS_PV"	 source="9idcSample:MagneticFieldDir"		dbrtype="DBR_STRING"     description="Sample MagneticField Dir (x/y/z)"/>
+    <Attribute name="Sample_StressField"     type="EPICS_PV"	 source="9idcSample:StressField"		    dbrtype="DBR_NATIVE"     description="Sample StressField"/>
+    <Attribute name="Sample_StressFieldDir"  type="EPICS_PV"	 source="9idcSample:StressFieldDir"		    dbrtype="DBR_STRING"     description="Sample StressField Dir (x/y/z)"/>
+    <Attribute name="Sample_ElectricField"   type="EPICS_PV"	 source="9idcSample:ElectricField"		    dbrtype="DBR_NATIVE"     description="Sample ElectricField"/>
+    <Attribute name="Sample_ElectricFieldDir"           type="EPICS_PV"	 source="9idcSample:ElectricFieldDir"    dbrtype="DBR_STRING"     description="Sample ElectricField Dir (x/y/z)"/>
+    <Attribute name="Sample_XTranslation"    type="EPICS_PV"	 source="9idcSample:XTranslation"		    dbrtype="DBR_NATIVE"     description="Sample XTranslation [mm]"/>
+    <Attribute name="Sample_RotationAngle"   type="EPICS_PV"	 source="9idcSample:RotationAngle"		    dbrtype="DBR_NATIVE"     description="Sample RotationAngle [deg]"/>
+    
     <!--
     <Attribute name="EmptyFileName" 	 type="EPICS_PV" source="9idcLAX:WAXS:EmptyFileName"	dbrtype="DBR_NATIVE" description="Name of file to use as empty scan"/>
     -->
@@ -99,7 +121,7 @@
 
     <Attribute name="sx"		     type="EPICS_PV" source="9idcLAX:m58:c2:m1.RBV"		        dbrtype="DBR_NATIVE" description="sample x stage position, mm"/>
     <Attribute name="sy"		     type="EPICS_PV" source="9idcLAX:m58:c2:m2.RBV"		        dbrtype="DBR_NATIVE" description="sample y stage position, mm"/>
-    <Attribute name="sa"		     type="EPICS_PV" source="9idcLAX:xps:c0:m7.RBV"		        dbrtype="DBR_NATIVE" description="sample azimuthal rotation, degrees"/>
+    <Attribute name="sa"		     type="EPICS_PV" source="9idcLAX:m58:c1:m3.RBV"		        dbrtype="DBR_NATIVE" description="sample azimuthal rotation, degrees"/>
  
     <Attribute name="waxs_ccd_center_x"	      type="EPICS_PV" source="9idcLAX:WAXS:BeamCenterX:NXdetector"	dbrtype="DBR_NATIVE" description="horizontal position of beam center on CCD, mm"/>
     <Attribute name="waxs_ccd_center_y"	      type="EPICS_PV" source="9idcLAX:WAXS:BeamCenterY:NXdetector"	dbrtype="DBR_NATIVE" description="vertical position of beam center on CCD, mm"/>
