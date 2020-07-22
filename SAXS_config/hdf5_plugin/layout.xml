@@ -102,12 +102,51 @@
 
     <group name="sample">    <!-- start group sample -->
       <attribute name="NX_class"     value="NXsample" source="constant" type="string"/> 
-      
-      <hardlink  name="name"         target="/entry/Metadata/SampleTitle"/>
-      <hardlink  name="aequatorial_angle"     target="/entry/Metadata/sa"/>
-      <hardlink  name="sample_x"     target="/entry/Metadata/sx"/>
-      <hardlink  name="sample_y"     target="/entry/Metadata/sy"/>
-      <hardlink  name="thickness"    target="/entry/Metadata/sthick"/>
+      <hardlink  name="name"                target="/entry/Metadata/SampleTitle"/>
+      <!--hardlink  name="aequatorial_angle"   target="/entry/Metadata/sa"/-->
+      <dataset   name="aequatorial_angle"    source="ndattribute" ndattribute="sa">
+          <attribute name="units"     source="constant" value="deg" type="string"/> 
+      </dataset>
+      <!--hardlink  name="sample_x"            target="/entry/Metadata/sx"/-->
+      <dataset   name="sample_x"    source="ndattribute" ndattribute="sx">
+          <attribute name="units"     source="constant" value="mm" type="string"/> 
+      </dataset>
+      <!--hardlink  name="sample_y"            target="/entry/Metadata/sy"/-->
+      <dataset   name="sample_y"    source="ndattribute" ndattribute="sy">
+          <attribute name="units"     source="constant" value="mm" type="string"/> 
+      </dataset>
+      <!--hardlink  name="thickness"           target="/entry/Metadata/sthick"/-->
+      <dataset   name="thickness"    source="ndattribute" ndattribute="sthick">
+          <attribute name="units"     source="constant" value="mm" type="string"/> 
+      </dataset>
+     <hardlink  name="chemical_formula"    target="/entry/Metadata/Sample_ChemicalFormula"/>
+      <!--hardlink  name="temperature"         target="/entry/Metadata/Sample_Temperature"/-->
+      <dataset   name="temperature"    source="ndattribute" ndattribute="Sample_Temperature">
+          <attribute name="units"     source="constant" value="C" type="string"/> 
+      </dataset>
+      <dataset   name="density"    source="ndattribute" ndattribute="Sample_Density">
+          <attribute name="units"     source="constant" value="g/cm3" type="string"/> 
+      </dataset>
+      <hardlink  name="description"                 target="/entry/Metadata/Sample_Description"/>
+      <hardlink  name="volume_fraction"             target="/entry/Metadata/Sample_VolumeFraction"/>
+      <hardlink  name="scattering_length_density"   target="/entry/Metadata/Sample_ScatteringLengthDensity"/>
+      <hardlink  name="concentration"           target="/entry/Metadata/Sample_Concentration"/>
+      <dataset   name="x_translation"    source="ndattribute" ndattribute="Sample_XTranslation">
+          <attribute name="units"     source="constant" value="mm" type="string"/> 
+      </dataset>
+      <dataset   name="rotation_angle"    source="ndattribute" ndattribute="Sample_RotationAngle">
+          <attribute name="units"     source="constant" value="deg" type="string"/> 
+      </dataset>
+      <dataset   name="electric_field"    source="ndattribute" ndattribute="Sample_ElectricField">
+          <attribute name="direction"     source="ndattribute" ndattribute="Sample_ElectricFieldDir" type="string"/> 
+      </dataset>
+      <dataset   name="magnetic_field"    source="ndattribute" ndattribute="Sample_MagneticField">
+          <attribute name="direction"     source="ndattribute" ndattribute="Sample_MagneticFieldDir" type="string"/> 
+      </dataset>
+      <dataset   name="stress_field"    source="ndattribute" ndattribute="Sample_StressField">
+          <attribute name="direction"     source="ndattribute" ndattribute="Sample_StressFieldDir" type="string"/> 
+      </dataset>
+
    </group>                  <!-- end group sample -->
 
     <group name="user">    <!-- start group user -->

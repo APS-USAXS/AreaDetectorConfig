@@ -40,7 +40,7 @@ Additionally, you can check this file for validity and that all PVs exist with t
                     <attribute name="config_version" value="1.2" />
                     <text>saveFlyData.py</text>
                 </field>
-                <PV label="title" pvname="9idcLAX:USAXS:sampleTitle" string="true" />
+                <PV label="title" pvname="9idcLAX:sampleTitle" string="true" />
                 <PV label="experiment_identifier" pvname="9idcLAX:GUPNumber" />
                 <PV label="run_cycle" pvname="9idcLAX:RunCycle" />
 
@@ -71,8 +71,8 @@ Additionally, you can check this file for validity and that all PVs exist with t
 
                 <group name="sample" class="NXsample">
                     <attribute name="canSAS_class" value="SASsample" />
-                    <PV label="name" pvname="9idcLAX:USAXS:sampleTitle" string="true" />
-                    <PV label="thickness" pvname="9idcLAX:USAXS:SampleThickness" />
+                    <PV label="name" pvname="9idcLAX:sampleTitle" string="true" />
+                    <PV label="thickness" pvname="9idcLAX:sampleThickness" />
                 </group>
 
                 <group name="flyScan" class="NXdata">
@@ -260,9 +260,9 @@ Additionally, you can check this file for validity and that all PVs exist with t
                     <PV label="SPEC_macro_file_string19" pvname="9idcLAX:string19" string="true" />
                     <PV label="SPEC_macro_file" pvname="9idcLAX:USAXS:macroFile" string="true" />
                     <PV label="SPEC_data_file" pvname="9idcLAX:USAXS:specFile" string="true" />
-                    <PV label="SPEC_data_dir" pvname="9idcLAX:USAXS:userDir" string="true" />
+                    <PV label="SPEC_data_dir" pvname="9idcLAX:userDir" string="true" />
                     <PV label="spec_scan" pvname="9idcLAX:USAXS:specScan" />
-                    <PV label="state" pvname="9idcLAX:USAXS:state" string="true" />
+                    <PV label="state" pvname="9idcLAX:state" string="true" />
                     <PV label="timeStamp" pvname="9idcLAX:USAXS:timeStamp" string="true" />
 
                     <!-- USAXS terms -->

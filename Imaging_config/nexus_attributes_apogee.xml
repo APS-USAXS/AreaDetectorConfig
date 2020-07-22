@@ -22,7 +22,7 @@
     <Attribute name="ImageCounter"	     type="PARAM"    source="ARRAY_COUNTER"			datatype="INT"       description="Image counter"/>
 
     <Attribute name="UserName"		     type="EPICS_PV" source="9idcLAX:UserName" 		dbrtype="DBR_NATIVE" description="user name listed as GUP PI"/>
-    <Attribute name="SampleTitle"	     type="EPICS_PV" source="9idcLAX:USAXS:sampleTitle"	dbrtype="DBR_NATIVE" description="sample name"/>
+    <Attribute name="SampleTitle"	     type="EPICS_PV" source="9idcLAX:sampleTitle"	dbrtype="DBR_NATIVE" description="sample name"/>
     <Attribute name="sthick"		     type="EPICS_PV" source="9idcLAX:sampleThickness"		dbrtype="DBR_NATIVE" description="sample thickness"/>
     <Attribute name="ScanMacro" 	     type="EPICS_PV" source="9idcLAX:SpecMacroFileName"	dbrtype="DBR_NATIVE" description="name of SPEC macro file"/>
     <!--Attribute name="ScanMacro"     type="EPICS_PV" source="9idcLAX:string19"          dbrtype="DBR_NATIVE" description="name of SPEC macro file"/-->
