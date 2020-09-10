@@ -4,11 +4,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://epics.aps.anl.gov/areaDetector/attributes ../attributes.xsd"
     >
-    
-    <!-- 
+
+    <!--
 	    Important Note
 	    ==============
-	    
+
 	    Order of the "type" of attributes matters.
 	    Required order is:
 	    * EPICS_PV
@@ -17,29 +17,105 @@
      -->
 
     <!-- TODO: add EGU to all float PVs once ADCore bug is fixed -->
-    
+
     <Attribute name="UserName"		     type="EPICS_PV"	 source="9idcLAX:UserName"			    dbrtype="DBR_NATIVE"     description="user name listed as GUP PI"/>
     <Attribute name="SampleTitle"	     type="EPICS_PV"	 source="9idcLAX:sampleTitle"		    dbrtype="DBR_STRING"     description="sample name"/>
     <Attribute name="sthick"		     type="EPICS_PV"	 source="9idcLAX:sampleThickness"		    dbrtype="DBR_NATIVE"     description="sample thickness"/>
     <Attribute name="ScanMacro" 	     type="EPICS_PV"	 source="9idcLAX:SpecMacroFileName"		    dbrtype="DBR_NATIVE"     description="name of SPEC macro file"/>
-<!-- Beamtime Scheduling System experiment info  -->
-    <Attribute name="BSS_activity" 	     type="EPICS_PV"	 source="9id_bss:activity"		    dbrtype="DBR_NATIVE"     description="Activity code"/>
-    <Attribute name="BSS_badge" 	     type="EPICS_PV"	 source="9id_bss:badge"			    dbrtype="DBR_NATIVE"     description="User badge number"/>
-    <Attribute name="BSS_proposal_number" type="EPICS_PV"	 source="9id_bss:proposal_number"   dbrtype="DBR_NATIVE"     description="Proposal number"/>
-    <Attribute name="BSS_bss_name" 	     type="EPICS_PV"	 source="9id_bss:bss_name"		    dbrtype="DBR_NATIVE"     description="Beamline name"/>
-    <Attribute name="BSS_contact" 	     type="EPICS_PV"	 source="9id_bss:contact"		    dbrtype="DBR_NATIVE"     description="User name"/>
-    <Attribute name="BSS_email" 	     type="EPICS_PV"	 source="9id_bss:email"			    dbrtype="DBR_NATIVE"     description="User e-mail"/>
-    <Attribute name="BSS_institution"    type="EPICS_PV"	 source="9id_bss:institution"	    dbrtype="DBR_NATIVE"     description="User institution"/>
-    <Attribute name="BSS_station" 	     type="EPICS_PV"	 source="9id_bss:station"		    dbrtype="DBR_NATIVE"     description="Hutch"/>
-    <Attribute name="BSS_team_others"    type="EPICS_PV"	 source="9id_bss:team_others"	    dbrtype="DBR_NATIVE"     description="Other users"/>
-    <Attribute name="BSS_time_begin"     type="EPICS_PV"	 source="9id_bss:time_begin"	    dbrtype="DBR_NATIVE"     description="Experiment start"/>
-    <Attribute name="BSS_time_end" 	     type="EPICS_PV"	 source="9id_bss:time_end"		    dbrtype="DBR_NATIVE"     description="Experiment end"/>
-    <Attribute name="BSS_timestamp"      type="EPICS_PV"	 source="9id_bss:timestamp"		    dbrtype="DBR_NATIVE"     description="Update timestamp"/>
-    <Attribute name="BSS_title" 	     type="EPICS_PV"	 source="9id_bss:title"			    dbrtype="DBR_NATIVE"     description="Experiment name"/>
 
-<!-- apsbss PVs info  -->
-    <Attribute name="ESAF_raw"     type="EPICS_PV"	 source="9idc:bss:esaf:raw"	        dbrtype="DBR_STRING"     description="raw ESAF entry (YAML-format)"/>
-    <Attribute name="Proposal_raw"     type="EPICS_PV"	 source="9idc:bss:proposal:raw"	        dbrtype="DBR_STRING"     description="raw Proposal entry (YAML-format)"/>
+<!-- apsbss ESAF & Proposal PVs info  -->
+    <Attribute name="APSBSS_ESAF_raw" type="EPICS_PV" source="9idc:bss:esaf:raw" dbrtype="DBR_STRING" description="raw ESAF entry (YAML-format)"/>
+    <Attribute name="APSBSS_ESAF_id" type="EPICS_PV" source="9idc:bss:esaf:id" dbrtype="DBR_STRING" description="ESAF id" />
+    <Attribute name="APSBSS_ESAF_title" type="EPICS_PV" source="9idc:bss:esaf:title" dbrtype="DBR_STRING" description="ESAF title" />
+    <Attribute name="APSBSS_ESAF_startDate" type="EPICS_PV" source="9idc:bss:esaf:startDate" dbrtype="DBR_STRING" description="ESAF start date" />
+    <Attribute name="APSBSS_ESAF_endDate" type="EPICS_PV" source="9idc:bss:esaf:endDate" dbrtype="DBR_STRING" description="ESAF end date" />
+
+    <Attribute name="APSBSS_Proposal_raw" type="EPICS_PV" ource="9idc:bss:proposal:raw" dbrtype="DBR_STRING" description="raw Proposal entry (YAML-format)"/>
+    <Attribute name="APSBSS_Proposal_id" type="EPICS_PV" source="9idc:bss:proposal:id" dbrtype="DBR_STRING" description="Proposal id" />
+    <Attribute name="APSBSS_Proposal_title" type="EPICS_PV" source="9idc:bss:proposal:title" dbrtype="DBR_STRING" description="Proposal title" />
+    <Attribute name="APSBSS_Proposal_startDate" type="EPICS_PV" source="9idc:bss:proposal:startDate" dbrtype="DBR_STRING" description="Proposal start date" />
+    <Attribute name="APSBSS_Proposal_endDate" type="EPICS_PV" source="9idc:bss:proposal:endDate" dbrtype="DBR_STRING" description="Proposal end date" />
+
+    <Attribute name="APSBSS_user1_last_name" type="EPICS_PV" source="9idc:bss:proposal:user1:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user1_first_name" type="EPICS_PV" source="9idc:bss:proposal:user1:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user1_user_id" type="EPICS_PV" source="9idc:bss:proposal:user1:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user1_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user1:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user1_email" type="EPICS_PV" source="9idc:bss:proposal:user1:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user1_institution" type="EPICS_PV" source="9idc:bss:proposal:user1:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user1_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user1:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user1_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user1:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
+
+    <Attribute name="APSBSS_user2_last_name" type="EPICS_PV" source="9idc:bss:proposal:user2:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user2_first_name" type="EPICS_PV" source="9idc:bss:proposal:user2:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user2_user_id" type="EPICS_PV" source="9idc:bss:proposal:user2:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user2_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user2:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user2_email" type="EPICS_PV" source="9idc:bss:proposal:user2:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user2_institution" type="EPICS_PV" source="9idc:bss:proposal:user2:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user2_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user2:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user2_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user2:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
+
+    <Attribute name="APSBSS_user3_last_name" type="EPICS_PV" source="9idc:bss:proposal:user3:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user3_first_name" type="EPICS_PV" source="9idc:bss:proposal:user3:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user3_user_id" type="EPICS_PV" source="9idc:bss:proposal:user3:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user3_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user3:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user3_email" type="EPICS_PV" source="9idc:bss:proposal:user3:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user3_institution" type="EPICS_PV" source="9idc:bss:proposal:user3:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user3_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user3:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user3_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user3:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
+
+    <Attribute name="APSBSS_user4_last_name" type="EPICS_PV" source="9idc:bss:proposal:user4:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user4_first_name" type="EPICS_PV" source="9idc:bss:proposal:user4:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user4_user_id" type="EPICS_PV" source="9idc:bss:proposal:user4:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user4_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user4:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user4_email" type="EPICS_PV" source="9idc:bss:proposal:user4:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user4_institution" type="EPICS_PV" source="9idc:bss:proposal:user4:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user4_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user4:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user4_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user4:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
+
+    <Attribute name="APSBSS_user5_last_name" type="EPICS_PV" source="9idc:bss:proposal:user5:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user5_first_name" type="EPICS_PV" source="9idc:bss:proposal:user5:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user5_user_id" type="EPICS_PV" source="9idc:bss:proposal:user5:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user5_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user5:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user5_email" type="EPICS_PV" source="9idc:bss:proposal:user5:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user5_institution" type="EPICS_PV" source="9idc:bss:proposal:user5:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user5_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user5:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user5_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user5:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
+
+    <Attribute name="APSBSS_user6_last_name" type="EPICS_PV" source="9idc:bss:proposal:user6:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user6_first_name" type="EPICS_PV" source="9idc:bss:proposal:user6:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user6_user_id" type="EPICS_PV" source="9idc:bss:proposal:user6:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user6_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user6:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user6_email" type="EPICS_PV" source="9idc:bss:proposal:user6:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user6_institution" type="EPICS_PV" source="9idc:bss:proposal:user6:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user6_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user6:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user6_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user6:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
+
+    <Attribute name="APSBSS_user7_last_name" type="EPICS_PV" source="9idc:bss:proposal:user7:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user7_first_name" type="EPICS_PV" source="9idc:bss:proposal:user7:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user7_user_id" type="EPICS_PV" source="9idc:bss:proposal:user7:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user7_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user7:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user7_email" type="EPICS_PV" source="9idc:bss:proposal:user7:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user7_institution" type="EPICS_PV" source="9idc:bss:proposal:user7:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user7_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user7:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user7_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user7:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
+
+    <Attribute name="APSBSS_user8_last_name" type="EPICS_PV" source="9idc:bss:proposal:user8:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user8_first_name" type="EPICS_PV" source="9idc:bss:proposal:user8:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user8_user_id" type="EPICS_PV" source="9idc:bss:proposal:user8:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user8_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user8:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user8_email" type="EPICS_PV" source="9idc:bss:proposal:user8:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user8_institution" type="EPICS_PV" source="9idc:bss:proposal:user8:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user8_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user8:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user8_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user8:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
+
+    <Attribute name="APSBSS_user9_last_name" type="EPICS_PV" source="9idc:bss:proposal:user9:lastName" dbrtype="DBR_STRING" description="family name" />
+    <Attribute name="APSBSS_user9_first_name" type="EPICS_PV" source="9idc:bss:proposal:user9:firstName" dbrtype="DBR_STRING" description="given name" />
+    <Attribute name="APSBSS_user9_user_id" type="EPICS_PV" source="9idc:bss:proposal:user9:userId" dbrtype="DBR_STRING" description="database user ID" />
+    <Attribute name="APSBSS_user9_badge_number" type="EPICS_PV" source="9idc:bss:proposal:user9:badgeNumber" dbrtype="DBR_STRING" description="ANL badge number" />
+    <Attribute name="APSBSS_user9_email" type="EPICS_PV" source="9idc:bss:proposal:user9:email" dbrtype="DBR_STRING" description="email address" />
+    <Attribute name="APSBSS_user9_institution" type="EPICS_PV" source="9idc:bss:proposal:user9:institution" dbrtype="DBR_STRING" description="institution name" />
+    <Attribute name="APSBSS_user9_institution_id" type="EPICS_PV" source="9idc:bss:proposal:user9:instId" dbrtype="DBR_STRING" description="APS insitution index ID" />
+    <Attribute name="APSBSS_user9_pi_flag" type="EPICS_PV" source="9idc:bss:proposal:user9:piFlag" dbrtype="DBR_STRING" description="Principal Investigator?" />
 
 <!-- Sample PVs info  -->
     <Attribute name="Sample_Description"     type="EPICS_PV"	 source="9idcSample:Description"	        dbrtype="DBR_STRING"     description="Sample Description"/>
@@ -57,7 +133,7 @@
     <Attribute name="Sample_ElectricFieldDir"           type="EPICS_PV"	 source="9idcSample:ElectricFieldDir"    dbrtype="DBR_STRING"     description="Sample ElectricField Dir (x/y/z)"/>
     <Attribute name="Sample_XTranslation"    type="EPICS_PV"	 source="9idcSample:XTranslation"		    dbrtype="DBR_NATIVE"     description="Sample XTranslation [mm]"/>
     <Attribute name="Sample_RotationAngle"   type="EPICS_PV"	 source="9idcSample:RotationAngle"		    dbrtype="DBR_NATIVE"     description="Sample RotationAngle [deg]"/>
-    
+
     <!--
     <Attribute name="EmptyFileName"	     type="EPICS_PV"	 source="9idcLAX:SAXS:EmptyFileName"	    dbrtype="DBR_NATIVE"     description="Name of file to use as empty scan"/>
     -->
@@ -78,7 +154,7 @@
     <Attribute name="wavelength"	     type="EPICS_PV"     source="9ida:BraggLambdaRdbkAO"			dbrtype="DBR_NATIVE"	 description="monochromator wavelength, A"/>
     <Attribute name="wavelength_EGU"	 type="EPICS_PV"	 source="9ida:BraggLambdaRdbkAO.EGU"			    dbrtype="DBR_NATIVE"     description="monochromator wavelength units"/>
     <Attribute name="wavelength_spread"  type="EPICS_PV"     source="9idcLAX:WavelengthSpread"  		dbrtype="DBR_NATIVE"	 description="delta-lambda / lambda"/>
- 
+
     <Attribute name="monoE"		         type="EPICS_PV"	 source="9ida:BraggERdbkAO"			    dbrtype="DBR_NATIVE"     description="monochromator energy, keV"/>
     <Attribute name="monoE_EGU"		     type="EPICS_PV"	 source="9ida:BraggERdbkAO.EGU"			    dbrtype="DBR_NATIVE"     description="monochromator energy units"/>
     <Attribute name="idE_us"		     type="EPICS_PV"	 source="ID09us:Energy" 			    dbrtype="DBR_NATIVE"     description="ID energy, upstream, keV"/>
@@ -99,7 +175,7 @@
     <Attribute name="scaler_freq"	     type="EPICS_PV"	 source="9idcLAX:vsc:c0.FREQ"			    dbrtype="DBR_NATIVE"     description="scaler frequency, Hz"/>
     <Attribute name="I0_gain"		     type="EPICS_PV"	 source="9idcUSX:fem02:seq01:gain"		    dbrtype="DBR_NATIVE"     description="I0 V/A gain"/>
     <Attribute name="I00_gain"		     type="EPICS_PV"	 source="9idcUSX:fem03:seq01:gain"		    dbrtype="DBR_NATIVE"     description="I00 V/A gain"/>
-	
+
     <Attribute name="GuardslitVap"	     type="EPICS_PV"	 source="9idcLAX:GSlit1V:size.VAL"		    dbrtype="DBR_NATIVE"     description="Guard slit, vertical aperture, mm"/>
     <Attribute name="GuardslitHap"	     type="EPICS_PV"	 source="9idcLAX:GSlit1H:size.VAL"		    dbrtype="DBR_NATIVE"     description="Guard slit, horizontal aperture, mm"/>
     <Attribute name="GuardslitVpos"	     type="EPICS_PV"	 source="9idcLAX:GSlit1V:center.VAL"		    dbrtype="DBR_NATIVE"     description="Guard slit, vertical position, mm"/>
@@ -108,7 +184,7 @@
     <Attribute name="PIN_Y"		     type="EPICS_PV"	 source="9idcLAX:mxv:c0:m8.RBV" 		    dbrtype="DBR_NATIVE"     description="pinhole y stage position, mm"/>
     <Attribute name="PIN_Z"		     type="EPICS_PV"	 source="9idcLAX:mxv:c0:m2.RBV" 		    dbrtype="DBR_NATIVE"     description="pinhole z stage position, mm"/>
     <Attribute name="WAXS_X"		     type="EPICS_PV"	 source="9idcLAX:m58:c0:m4.RBV" 		    dbrtype="DBR_NATIVE"     description="waxs x stage position, mm"/>
-	
+
     <Attribute name="mr_enc"		     type="EPICS_PV"	 source="9idcLAX:mr:encoder"			    dbrtype="DBR_NATIVE"     description="mr readback, deg"/>
 
     <Attribute name="mx"		     type="EPICS_PV"	 source="9idcLAX:m58:c0:m2.RBV" 		    dbrtype="DBR_NATIVE"     description="mx stage position, mm"/>
@@ -119,7 +195,7 @@
     <Attribute name="sx"		     type="EPICS_PV"	 source="9idcLAX:m58:c2:m1.RBV" 		    dbrtype="DBR_NATIVE"     description="sample x stage position, mm"/>
     <Attribute name="sy"		     type="EPICS_PV"	 source="9idcLAX:m58:c2:m2.RBV" 		    dbrtype="DBR_NATIVE"     description="sample y stage position, mm"/>
     <Attribute name="sa"		     type="EPICS_PV"	 source="9idcLAX:m58:c1:m3.RBV" 		    dbrtype="DBR_NATIVE"     description="sample azimuthal rotation, degrees"/>
- 
+
     <Attribute name="pin_ccd_center_x"	     type="EPICS_PV"	 source="9idcLAX:SAXS:BeamCenterX:NXdetector"  dbrtype="DBR_NATIVE"     description="horizontal position of beam center on CCD, mm"/>
     <Attribute name="pin_ccd_center_y"	     type="EPICS_PV"	 source="9idcLAX:SAXS:BeamCenterY:NXdetector"  dbrtype="DBR_NATIVE"     description="vertical position of beam center on CCD, mm"/>
     <Attribute name="pin_ccd_center_x_pixel" type="EPICS_PV"	 source="9idcLAX:SAXS:BeamCenterX" 	    dbrtype="DBR_NATIVE"     description="horizontal position of beam center on CCD, pixels"/>
@@ -128,7 +204,7 @@
     <Attribute name="pin_ccd_pixel_size_y"   type="EPICS_PV"	 source="9idcLAX:SAXS:PinPixSizeY" 	    dbrtype="DBR_NATIVE"     description="CCD pixel size, vertical, mm"/>
     <Attribute name="pin_ccd_tilt_x"   	     type="EPICS_PV"	 source="9idcLAX:SAXS:DetectorTiltX"	    dbrtype="DBR_NATIVE"     description="CCD tilt, x direction, degrees"/>
     <Attribute name="pin_ccd_tilt_y"   	     type="EPICS_PV"	 source="9idcLAX:SAXS:DetectorTiltY"	    dbrtype="DBR_NATIVE"     description="CCD tilt, y direction, degrees"/>
- 
+
     <Attribute name="ccdProtection"   	     type="EPICS_PV"	 source="9idcLAX:ccdProtection" 		    dbrtype="DBR_NATIVE"     description="CCD protection bit"/>
 
     <Attribute name="Pin_TrPD"		     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrPD"		    dbrtype="DBR_NATIVE"     description="SAXS_TrPD"/>
@@ -146,7 +222,7 @@
     <Attribute name="linkam_ci94_limit" 	type="EPICS_PV"	 source="9idcLAX:ci94:setLimit"				dbrtype="DBR_NATIVE"     description="linkam_ci94_limit"/>
     <Attribute name="linkam_ci94_errors"	type="EPICS_PV"	 source="9idcLAX:ci94:errorByte"			dbrtype="DBR_NATIVE"     description="linkam_ci94_errors"/>
     <!-- end Linkam CI94 status PVs -->
-    
+
     <!-- Linkam T96 status PVs JIL 2018-10 -->
     <Attribute name="linkam_T96_temp"			type="EPICS_PV"	 source="9idcLINKAM:tc1:temperature_RBV"	dbrtype="DBR_NATIVE"     description="linkam_T96_temp"/>
     <Attribute name="linkam_T96_status"			type="EPICS_PV"	 source="9idcLINKAM:tc1:heating"			dbrtype="DBR_NATIVE"     description="linkam_T96_status"/>
