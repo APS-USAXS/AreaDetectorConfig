@@ -140,7 +140,6 @@
     <Attribute name="GUPNumber" 	     type="EPICS_PV"	 source="9idcLAX:GUPNumber"			    dbrtype="DBR_NATIVE"     description="GUP proposal number"/>
 
     <Attribute name="StartTime" 	     type="EPICS_PV"	 source="9idcLAX:SAXS:StartExposureTime"	    dbrtype="DBR_NATIVE"     description="image starting time"/>
-    <Attribute name="EndTime"		     type="EPICS_PV"	 source="9idcLAX:SAXS:EndExposureTime"	    dbrtype="DBR_NATIVE"     description="image ending time"/>
     <Attribute name="SDD"		         type="EPICS_PV"	 source="9idcLAX:SAXS:Distance"		    dbrtype="DBR_NATIVE"     description="SDD: distance between sample and detector, mm"/>
     <Attribute name="I_scaling"  		 type="EPICS_PV"	 source="9idcLAX:SAXS:CalibrationConstant" dbrtype="DBR_NATIVE"     description="Calibration constant for absolute Int. scale"/>
     <Attribute name="PresetTime"	     type="EPICS_PV"	 source="usaxs_pilatus1:cam1:AcquireTime"	    dbrtype="DBR_NATIVE"     description="specified time for this exposure, s"/>

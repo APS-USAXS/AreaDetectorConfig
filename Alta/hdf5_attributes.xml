@@ -52,7 +52,6 @@
     <Attribute name="Magnification" 	 type="EPICS_PV" source="9idcLAX:USAXS_Img:Magnification"	dbrtype="DBR_NATIVE" description="Magnification gain of lenses"/>
     <Attribute name="ExposureTime" 	 	 type="EPICS_PV" source="9idcLAX:USAXS_Img:ExposureTime"	dbrtype="DBR_NATIVE" description="Exposure time"/>
     <Attribute name="StartExposureTime" 	 type="EPICS_PV" source="9idcLAX:USAXS_Img:StartExposureTime"	dbrtype="DBR_NATIVE" description="Start of exposure time stamp"/>
-    <Attribute name="EndExposureTime" 	 	 type="EPICS_PV" source="9idcLAX:USAXS_Img:EndExposureTime"	dbrtype="DBR_NATIVE" description="End of exposure time stamp"/>
     <Attribute name="SampleToScintDistance"  type="EPICS_PV" source="9idcLAX:USAXS_Img:SampleToScintDistance"	dbrtype="DBR_NATIVE" description="Sample To Scintillator Distance"/>
     <Attribute name="SampleToScintDistance_EGU"	type="EPICS_PV" source="9idcLAX:USAXS_Img:SampleToScintDistance.EGU"	dbrtype="DBR_NATIVE" description="SampleToScintDistance: units"/>
  
