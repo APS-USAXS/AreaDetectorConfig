@@ -191,8 +191,8 @@
 
     <Attribute name="mx"		     type="EPICS_PV" source="9idcLAX:m58:c0:m2.RBV"		        dbrtype="DBR_NATIVE" description="mx stage position, mm"/>
     <Attribute name="my"		     type="EPICS_PV" source="9idcLAX:m58:c0:m3.RBV"		        dbrtype="DBR_NATIVE" description="my stage position, mm"/>
-    <Attribute name="m2rp"		     type="EPICS_PV" source="9idcLAX:pi:c0:m2.VAL"			        dbrtype="DBR_NATIVE" description="m2rp voltage, V"/>
-    <Attribute name="msrp"		     type="EPICS_PV" source="9idcLAX:pi:c0:m3.VAL"			        dbrtype="DBR_NATIVE" description="msrp voltage, V"/>
+    <Attribute name="m2rp"		     type="EPICS_PV" source="9idcLAX:pzt:m2"			        dbrtype="DBR_NATIVE" description="m2rp voltage, V"/>
+    <Attribute name="msrp"		     type="EPICS_PV" source="9idcLAX:pzt:m4"			        dbrtype="DBR_NATIVE" description="msrp voltage, V"/>
 
     <Attribute name="sx"		     type="EPICS_PV" source="9idcLAX:m58:c2:m1.RBV"		        dbrtype="DBR_NATIVE" description="sample x stage position, mm"/>
     <Attribute name="sy"		     type="EPICS_PV" source="9idcLAX:m58:c2:m2.RBV"		        dbrtype="DBR_NATIVE" description="sample y stage position, mm"/>
@@ -207,7 +207,7 @@
     <Attribute name="waxs_ccd_tilt_x"	      type="EPICS_PV" source="9idcLAX:WAXS:DetectorTiltX"	dbrtype="DBR_NATIVE" description="CCD tilt, x direction, degrees"/>
     <Attribute name="waxs_ccd_tilt_y"	      type="EPICS_PV" source="9idcLAX:WAXS:DetectorTiltY"	dbrtype="DBR_NATIVE" description="CCD tilt, y direction, degrees"/>
 
-    <Attribute name="ccdProtection"   	     type="EPICS_PV" source="9idcLAX:userCalc1.VAL" 	dbrtype="DBR_NATIVE" description="CCD protection bit"/>
+    <Attribute name="ccdProtection"   	     type="EPICS_PV" source="9idcLAX:ccdProtection" 	dbrtype="DBR_NATIVE" description="CCD protection bit"/>
 
 
     <!-- Linkam temperature controller -->

@@ -9,7 +9,6 @@
     <dataset  name="program_name"   value="EPICS areaDetector" source="constant" type="string"/>
     <hardlink name="run_cycle"      target="/entry/Metadata/APS_run_cycle"/>
     <hardlink name="start_time"     target="/entry/Metadata/StartTime"/>
-    <hardlink name="end_time"       target="/entry/Metadata/EndTime"/>
     <hardlink name="title"          target="/entry/Metadata/SampleTitle"/>
     <hardlink name="GUPNumber"      target="/entry/Metadata/GUPNumber"/>
 

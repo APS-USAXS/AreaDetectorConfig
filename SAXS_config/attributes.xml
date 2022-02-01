@@ -30,7 +30,7 @@
     <Attribute name="APSBSS_ESAF_startDate" type="EPICS_PV" source="9idc:bss:esaf:startDate" dbrtype="DBR_STRING" description="ESAF start date" />
     <Attribute name="APSBSS_ESAF_endDate" type="EPICS_PV" source="9idc:bss:esaf:endDate" dbrtype="DBR_STRING" description="ESAF end date" />
 
-    <Attribute name="APSBSS_Proposal_raw" type="EPICS_PV" ource="9idc:bss:proposal:raw" dbrtype="DBR_STRING" description="raw Proposal entry (YAML-format)"/>
+    <Attribute name="APSBSS_Proposal_raw" type="EPICS_PV" source="9idc:bss:proposal:raw" dbrtype="DBR_STRING" description="raw Proposal entry (YAML-format)"/>
     <Attribute name="APSBSS_Proposal_id" type="EPICS_PV" source="9idc:bss:proposal:id" dbrtype="DBR_STRING" description="Proposal id" />
     <Attribute name="APSBSS_Proposal_title" type="EPICS_PV" source="9idc:bss:proposal:title" dbrtype="DBR_STRING" description="Proposal title" />
     <Attribute name="APSBSS_Proposal_startDate" type="EPICS_PV" source="9idc:bss:proposal:startDate" dbrtype="DBR_STRING" description="Proposal start date" />
@@ -188,8 +188,8 @@
 
     <Attribute name="mx"		     type="EPICS_PV"	 source="9idcLAX:m58:c0:m2.RBV" 		    dbrtype="DBR_NATIVE"     description="mx stage position, mm"/>
     <Attribute name="my"		     type="EPICS_PV"	 source="9idcLAX:m58:c0:m3.RBV" 		    dbrtype="DBR_NATIVE"     description="my stage position, mm"/>
-    <Attribute name="m2rp"		     type="EPICS_PV"	 source="9idcUSX:pzt:m2"			    dbrtype="DBR_NATIVE"     description="m2rp voltage, V"/>
-    <Attribute name="msrp"		     type="EPICS_PV"	 source="9idcUSX:pzt:m4"			    dbrtype="DBR_NATIVE"     description="msrp voltage, V"/>
+    <Attribute name="m2rp"		     type="EPICS_PV"	 source="9idcLAX:pi:c0:m2.VAL"			    dbrtype="DBR_NATIVE"     description="m2rp voltage, V"/>
+    <Attribute name="msrp"		     type="EPICS_PV"	 source="9idcLAX:pi:c0:m3.VAL"			    dbrtype="DBR_NATIVE"     description="msrp voltage, V"/>
 
     <Attribute name="sx"		     type="EPICS_PV"	 source="9idcLAX:m58:c2:m1.RBV" 		    dbrtype="DBR_NATIVE"     description="sample x stage position, mm"/>
     <Attribute name="sy"		     type="EPICS_PV"	 source="9idcLAX:m58:c2:m2.RBV" 		    dbrtype="DBR_NATIVE"     description="sample y stage position, mm"/>
@@ -204,7 +204,7 @@
     <Attribute name="pin_ccd_tilt_x"   	     type="EPICS_PV"	 source="9idcLAX:SAXS:DetectorTiltX"	    dbrtype="DBR_NATIVE"     description="CCD tilt, x direction, degrees"/>
     <Attribute name="pin_ccd_tilt_y"   	     type="EPICS_PV"	 source="9idcLAX:SAXS:DetectorTiltY"	    dbrtype="DBR_NATIVE"     description="CCD tilt, y direction, degrees"/>
 
-    <Attribute name="ccdProtection"   	     type="EPICS_PV"	 source="9idcLAX:ccdProtection" 		    dbrtype="DBR_NATIVE"     description="CCD protection bit"/>
+    <Attribute name="ccdProtection"   	     type="EPICS_PV"	 source="9idcLAX:userCalc1.VAL" 		    dbrtype="DBR_NATIVE"     description="CCD protection bit"/>
 
     <Attribute name="Pin_TrPD"		     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrPD"		    dbrtype="DBR_NATIVE"     description="SAXS_TrPD"/>
     <Attribute name="Pin_TrI0"		     type="EPICS_PV"	 source="9idcLAX:SAXS:SAXS_TrI0"		    dbrtype="DBR_NATIVE"     description="SAXS_TrI0"/>

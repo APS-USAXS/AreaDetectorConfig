@@ -25,10 +25,10 @@
       <attribute name="signal"      value="data"         source="constant" type="string"/> 
       
       <hardlink  name="data"        target="/entry/instrument/detector/data"/>
-      <dataset   name="description" value="Pilatus"      source="constant" type="string"/>
-      <dataset   name="local_name"  value="Pilatus 100K" source="constant" type="string"/>
-      <dataset   name="make"        value="Dectris"      source="constant" type="string"/>
-      <dataset   name="model"       value="Pilatus"      source="constant" type="string"/>
+      <dataset   name="description" value="Dexela"      source="constant" type="string"/>
+      <dataset   name="local_name"  value="Dexela N2315" source="constant" type="string"/>
+      <dataset   name="make"        value="Dexela"      source="constant" type="string"/>
+      <dataset   name="model"       value="N2315"      source="constant" type="string"/>
    </group>              <!-- end group data -->
 
 
@@ -92,12 +92,18 @@
         <hardlink name="distance" target="/entry/Metadata/SDD"/>
         <hardlink name="beam_center_x" target="/entry/Metadata/waxs_ccd_center_x_pixel"/>
         <hardlink name="beam_center_y" target="/entry/Metadata/waxs_ccd_center_y_pixel"/>
-        <hardlink name="x_pixel_size" target="/entry/Metadata/waxs_ccd_pixel_size_x"/>
-        <hardlink name="y_pixel_size" target="/entry/Metadata/waxs_ccd_pixel_size_y"/>
+        <dataset name="x_pixel_size"   value="0.0748"  source="constant" type="float"/>
+        <dataset name="y_pixel_size"   value="0.0748"  source="constant" type="float"/>
+        <group name="process1">    <!-- start group process1 (PROC1) -->
+          <attribute name="NX_class"    value="NXprocess" source="constant" type="string"/> 
+          <dataset  name="description"  value="PROC1 settings" source="constant" type="string"/>
+          <hardlink name="frames_summed"   target="/entry/Metadata/detector_frames_summed"/>
+          <hardlink name="int_frame_offset"   target="/entry/Metadata/detector_frame_offset"/>
+        </group>                  <!-- end group process1 -->    
       </group>            <!-- end group detector -->
-
       <!-- <group name="performance"/ -->
     </group>                      <!-- end group instrument --> 
+
 
     <group name="sample">    <!-- start group sample -->
       <attribute name="NX_class"     value="NXsample" source="constant" type="string"/> 
@@ -145,7 +151,7 @@
       <dataset   name="stress_field"    source="ndattribute" ndattribute="Sample_StressField">
           <attribute name="direction"     source="ndattribute" ndattribute="Sample_StressFieldDir" type="string"/> 
       </dataset>
-   </group>                  <!-- end group sample -->
+    </group>                  <!-- end group sample -->
 
     <group name="user">    <!-- start group user -->
       <attribute name="NX_class" value="NXuser" source="constant" type="string"/> 

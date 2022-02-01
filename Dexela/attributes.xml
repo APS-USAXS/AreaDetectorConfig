@@ -142,7 +142,7 @@
     <Attribute name="StartTime" 	     type="EPICS_PV" source="9idcLAX:WAXS:StartExposureTime"	dbrtype="DBR_NATIVE" description="image starting time"/>
     <Attribute name="SDD"		   		 type="EPICS_PV" source="9idcLAX:WAXS:Distance"	        dbrtype="DBR_NATIVE" description="SDD: distance between sample and detector, mm"/>
     <Attribute name="I_scaling"  	 	 type="EPICS_PV" source="9idcLAX:WAXS:CalibrationConstant" dbrtype="DBR_NATIVE"     description="Calibration constant for absolute Int. scale"/>
-    <Attribute name="PresetTime"	     type="EPICS_PV" source="usaxs_pilatus2:cam1:AcquireTime"		dbrtype="DBR_NATIVE" description="specified time for this exposure, s"/>
+    <Attribute name="PresetTime"	     type="EPICS_PV" source="9idcLAX:userCalc10.VAL"		dbrtype="DBR_NATIVE" description="Total time for this exposure, s"/>
     <Attribute name="APS_run_cycle"	     type="EPICS_PV" source="9idcLAX:RunCycle" 		        dbrtype="DBR_NATIVE" description="APS operating cycle"/>
 
     <Attribute name="USAXSslitVap"	     type="EPICS_PV" source="9idcLAX:m58:c2:m7"		        dbrtype="DBR_NATIVE" description="USAXS slit, vertical aperture, mm"/>
@@ -202,10 +202,14 @@
     <Attribute name="waxs_ccd_center_y"	      type="EPICS_PV" source="9idcLAX:WAXS:BeamCenterY:NXdetector"	dbrtype="DBR_NATIVE" description="vertical position of beam center on CCD, mm"/>
     <Attribute name="waxs_ccd_center_x_pixel" type="EPICS_PV" source="9idcLAX:WAXS:BeamCenterX"	dbrtype="DBR_NATIVE" description="horizontal position of beam center on CCD, pixels"/>
     <Attribute name="waxs_ccd_center_y_pixel" type="EPICS_PV" source="9idcLAX:WAXS:BeamCenterY"	dbrtype="DBR_NATIVE" description="vertical position of beam center on CCD, pixels"/>
-    <Attribute name="waxs_ccd_pixel_size_x"   type="EPICS_PV" source="9idcLAX:WAXS:PinPixSizeX"	dbrtype="DBR_NATIVE" description="CCD pixel size, horizontal, mm"/>
-    <Attribute name="waxs_ccd_pixel_size_y"   type="EPICS_PV" source="9idcLAX:WAXS:PinPixSizeY"	dbrtype="DBR_NATIVE" description="CCD pixel size, vertical, mm"/>
     <Attribute name="waxs_ccd_tilt_x"	      type="EPICS_PV" source="9idcLAX:WAXS:DetectorTiltX"	dbrtype="DBR_NATIVE" description="CCD tilt, x direction, degrees"/>
     <Attribute name="waxs_ccd_tilt_y"	      type="EPICS_PV" source="9idcLAX:WAXS:DetectorTiltY"	dbrtype="DBR_NATIVE" description="CCD tilt, y direction, degrees"/>
+    <Attribute name="waxs_ccd_pixel_size_x"   type="EPICS_PV" source="9idcLAX:WAXS:PinPixSizeX"	dbrtype="DBR_NATIVE" description="CCD pixel size, horizontal, mm"/>
+    <Attribute name="waxs_ccd_pixel_size_y"   type="EPICS_PV" source="9idcLAX:WAXS:PinPixSizeY"	dbrtype="DBR_NATIVE" description="CCD pixel size, vertical, mm"/>
+
+    <Attribute name="detector_frames_summed"   type="EPICS_PV" source="9idcDEX:Proc1:NumFilter"	dbrtype="DBR_NATIVE" description="Number of frames summed in processing"/>
+    <Attribute name="detector_frame_offset"   type="EPICS_PV" source="9idcDEX:cam1:DEXOffsetConstant"	dbrtype="DBR_NATIVE" description="Intensity offset added to each frame"/>
+
 
     <Attribute name="ccdProtection"   	     type="EPICS_PV" source="9idcLAX:userCalc1.VAL" 	dbrtype="DBR_NATIVE" description="CCD protection bit"/>
 
